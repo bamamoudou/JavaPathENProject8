@@ -1,0 +1,21 @@
+tourGuide/user/UserPreferences.java
+ tourGuide.user.UserPreferences
+tourGuide/service/RewardsService.java
+ tourGuide.service.RewardsService
+tourGuide/user/UserReward.java
+ tourGuide.user.UserReward
+tourGuide/helper/InternalTestHelper.java
+ tourGuide.helper.InternalTestHelper
+tourGuide/service/TourGuideService.java
+ tourGuide.service.TourGuideService
+ tourGuide.service.TourGuideService$1
+tourGuide/Application.java
+ tourGuide.Application
+tourGuide/tracker/Tracker.java
+ tourGuide.tracker.Tracker
+tourGuide/TourGuideModule.java
+ tourGuide.TourGuideModule
+tourGuide/user/User.java
+ tourGuide.user.User
+tourGuide/TourGuideController.java
+ tourGuide.TourGuideController
