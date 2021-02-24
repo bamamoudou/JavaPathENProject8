@@ -4,8 +4,7 @@ import java.util.UUID;
 
 import gpsUtil.location.Attraction;
 import gpsUtil.location.Location;
-import tourGuide.service.RewardsService;
-import tourGuide.user.User;
+import tourGuide.rewardservices.RewardService;
 
 /**
  * AttractionNearby is the data format exchanged in JSON with the client for the
@@ -28,7 +27,7 @@ public class AttractionNearby {
 		attractionLocation = new Location(attraction.latitude, attraction.longitude);
 		Location userCurrentLocation = user.getLastVisitedLocation().location;
 		userLocation = new Location(userCurrentLocation.latitude, userCurrentLocation.longitude);
-		distance = RewardsService.getDistance(attractionLocation, userLocation);
+		distance = RewardService.getDistance(attractionLocation, userLocation);
 		this.rewardPoints = rewardPoints;
 	}
 }

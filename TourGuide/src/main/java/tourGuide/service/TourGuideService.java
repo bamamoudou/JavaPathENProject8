@@ -1,119 +1,87 @@
 package tourGuide.service;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
+import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import gpsUtil.GpsUtil;
 import gpsUtil.location.Attraction;
 import gpsUtil.location.Location;
 import gpsUtil.location.VisitedLocation;
+import tourGuide.gpsservices.GpsService;
 import tourGuide.model.AttractionDistance;
 import tourGuide.model.AttractionNearby;
-import tourGuide.tracker.Tracker;
-import tourGuide.user.User;
-import tourGuide.user.UserReward;
+import tourGuide.model.User;
+import tourGuide.model.UserReward;
+import tourGuide.rewardservices.RewardService;
+import tourGuide.tripServices.TripService;
+import tourGuide.user.UserService;
 import tripPricer.Provider;
-import tripPricer.TripPricer;
 
 @Service
 public class TourGuideService {
-	public static final String tripPricerApiKey = "test-server-api-key";
 	public static final int NUMBER_OF_PROPOSED_ATTRACTIONS = 5;
 	Logger logger = LoggerFactory.getLogger(TourGuideService.class);
 	@Autowired
-	private GpsUtil gpsUtil; // TODO interface
+	private GpsService gpsService;
 	@Autowired
-	private RewardsService rewardsService; // TODO interface
+	private RewardService rewardService;
 	@Autowired
-	private TripPricer tripPricer; // TODO interface
+	private TripService tripService;
 	@Autowired
-	private Tracker tracker; // TODO interface
-	@Autowired
-	private UserService userService; // TODO interface
+	private UserService userService;
 
 	public TourGuideService() {
-		// addShutDownHook(); WHY ???
+//		addShutDownHook(); // WHY ???
 	}
 
 	public List<UserReward> getUserRewards(User user) {
 		return user.getUserRewards();
 	}
 
-	public VisitedLocation getUserLocation(User user) {
-		VisitedLocation visitedLocation = (user.getVisitedLocations().size() > 0) ? user.getLastVisitedLocation()
-				: trackUserLocation(user);
-		return visitedLocation;
-	}
-
-	public Map<String, Location> getAllUserLocations() {
-		Map<String, Location> allUserLocations = new HashMap<String, Location>();
+	public Map<String, Location> getLastLocationAllUsers() {
+		// Get all users within the application
 		List<User> allUsers = userService.getAllUsers();
-		for (User u : allUsers) {
-			VisitedLocation vl = u.getLastVisitedLocation();
-//			if (vl != null) { // Null may happen through Tracker thread for instance
-			allUserLocations.put(u.getUserId().toString(), vl.location);
-//			}
-		}
+		// Get visited locations for all of them
+		Map<UUID, Location> allUserLocationsWithUUID = gpsService.getLastUsersLocations(allUsers);
+		// Change the key of the map to match the String format requirement
+		Map<String, Location> allUserLocations = allUserLocationsWithUUID.entrySet().stream()
+				.collect(Collectors.toMap(entry -> entry.getKey().toString(), entry -> entry.getValue()));
 		return allUserLocations;
 	}
 
 	public List<Provider> getTripDeals(User user) {
-		// Calculer le nombre total de points de fidélité de l'utilisateur
-		int cumulativeRewardPoints = user.getUserRewards().stream().mapToInt(i -> i.getRewardPoints()).sum();
-		List<Provider> providers = new ArrayList<Provider>();
-		// Lister les attractions à proximité de l'utilisateur
+		// Calculate the sum of all reward points for given user
+		int cumulativeRewardPoints = rewardService.sumOfAllRewardPoints(user);
+		// List attractions in the neighborhood of the user
 		List<AttractionNearby> attractions = getNearByAttractions(user.getUserName());
-
-		// Pour chaque attraction à proximité, lister les propositions de voyages
-		// correspondant aux souhaits de l'utilisateur
-		// en tenant compte de ses points de fidélité pour le prix
-		for (AttractionNearby a : attractions) {
-			providers.addAll(tripPricer.getPrice(tripPricerApiKey, a.id, user.getUserPreferences().getNumberOfAdults(),
-					user.getUserPreferences().getNumberOfChildren(), user.getUserPreferences().getTripDuration(),
-					cumulativeRewardPoints));
-		}
-		user.setTripDeals(providers);
-		return providers;
-
-		/*
-		 * Idée d'implémentation
-		 * 
-		 * public List<Provider> getTripDeals(User user) { int cumulativeRewardPoints =
-		 * getCumulativeRewardPoints(user); List<Attraction> attractions =
-		 * getNearAttractions(user); List<Provider> providers =
-		 * getAttractionsDeals(attractions, cumulativeRewardPoints,
-		 * user.getUserPreferences()); return providers; }
-		 *
-		 * chaque appel n'utilise qu'une seule bibliothèque
-		 * 
-		 */
+		// Calculate trip proposals matching attractions list, user preferences and
+		// reward points
+		return tripService.calculateProposals(user, attractions, cumulativeRewardPoints);
 	}
 
-	public VisitedLocation trackUserLocation(User user) {
-		VisitedLocation visitedLocation = gpsUtil.getUserLocation(user.getUserId());
-		/*
-		 * if (visitedLocation == null) { // May happen through Tracker thread for
-		 * instance return null; }
-		 */
-		user.addToVisitedLocations(visitedLocation);
-		rewardsService.calculateRewards(user);
-		return visitedLocation;
-	}
+	/*
+	 * NOT USED ANY MORE public VisitedLocation
+	 * trackUserLocationAndCalculateRewards(User user) { // Get current user
+	 * location and register it for given user VisitedLocation visitedLocation =
+	 * gpsService.trackUserLocation(user); // Update rewards for given user
+	 * calculateRewards(user); return visitedLocation; }
+	 */
 
 	public List<AttractionNearby> getNearByAttractions(String userName) {
-		// Prepare list of all attractions for sorting
+		// Prepare user location as reference to measure attraction distance
 		User user = userService.getUser(userName);
-		VisitedLocation visitedLocation = getUserLocation(user);
+		VisitedLocation visitedLocation = gpsService.getLastUserLocation(user);
 		Location fromLocation = visitedLocation.location;
+		// Prepare list of all attractions to be sorted
 		List<AttractionDistance> fullList = new ArrayList<>();
-		for (Attraction toAttraction : gpsUtil.getAttractions()) {
+		for (Attraction toAttraction : gpsService.getAllAttractions()) {
 			AttractionDistance ad = new AttractionDistance(fromLocation, toAttraction);
 			fullList.add(ad);
 		}
@@ -123,18 +91,24 @@ public class TourGuideService {
 		List<AttractionNearby> nearbyAttractions = new ArrayList<>();
 		for (int i = 0; i < NUMBER_OF_PROPOSED_ATTRACTIONS && i < fullList.size(); i++) {
 			Attraction attraction = fullList.get(i);
-			int rewardPoints = rewardsService.getRewardPoints(attraction, user);
+			int rewardPoints = rewardService.getRewardPoints(attraction, user);
 			AttractionNearby nearbyAttraction = new AttractionNearby(attraction, user, rewardPoints);
 			nearbyAttractions.add(nearbyAttraction);
 		}
 		return nearbyAttractions;
 	}
 
-	private void addShutDownHook() {
-		Runtime.getRuntime().addShutdownHook(new Thread() {
-			public void run() {
-				tracker.stopTracking();
-			}
-		});
+	/*
+	 * TODO : WHY ? private void addShutDownHook() {
+	 * Runtime.getRuntime().addShutdownHook(new Thread() { public void run() {
+	 * tracker.stopTracking(); } }); }
+	 */
+
+	public void addUserRewards(User user) {
+		// Get all existing attractions within the application
+		List<Attraction> attractions = gpsService.getAllAttractions();
+		// Add all new rewards for given combination of user, visited locations and
+		// existing attractions
+		rewardService.addAllNewRewards(user, attractions);
 	}
 }
