@@ -1,15 +1,10 @@
 package tourGuide.model;
 
-import gpsUtil.location.Attraction;
-import gpsUtil.location.Location;
-import tourGuide.rewardservices.RewardService;
+public class AttractionDistance extends AttractionData implements Comparable<AttractionDistance> {
+	private LocationData fromLocation;
 
-public class AttractionDistance extends Attraction implements Comparable<AttractionDistance> {
-	private Location fromLocation;
-
-	public AttractionDistance(Location fromLocation, Attraction toAttraction) {
-		super(toAttraction.attractionName, toAttraction.city, toAttraction.state, toAttraction.latitude,
-				toAttraction.longitude);
+	public AttractionDistance(LocationData fromLocation, AttractionData toAttraction) {
+		super(toAttraction.name, toAttraction.city, toAttraction.state, toAttraction.latitude, toAttraction.longitude);
 		this.fromLocation = fromLocation;
 	}
 
@@ -20,10 +15,9 @@ public class AttractionDistance extends Attraction implements Comparable<Attract
 				|| this.fromLocation.longitude != that.fromLocation.longitude) {
 			throw new RuntimeException("Trying to compare attractions based on different origins");
 		}
-		double distanceToThis = RewardService.getDistance(this.fromLocation,
-				new Location(this.latitude, this.longitude));
-		double distanceToThat = RewardService.getDistance(that.fromLocation,
-				new Location(that.latitude, that.longitude));
+		// Return the comparison result
+		double distanceToThis = this.fromLocation.getDistance(new LocationData(this.latitude, this.longitude));
+		double distanceToThat = that.fromLocation.getDistance(new LocationData(that.latitude, that.longitude));
 		return Double.valueOf(distanceToThis).compareTo(Double.valueOf(distanceToThat));
 	}
 }

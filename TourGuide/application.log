@@ -1,0 +1,116 @@
+2021-02-26 19:29:19.031  INFO 5772 --- [main] tourGuide.gpsservices.GpsServiceTest     : No active profile set, falling back to default profiles: default
+2021-02-26 19:29:26.102  INFO 5772 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=75222991-ce20-370d-9108-c73846a7d9fe
+2021-02-26 19:29:31.985  WARN 5772 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2021-02-26 19:29:31.992  INFO 5772 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-02-26 19:29:32.005  WARN 5772 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2021-02-26 19:29:32.005  INFO 5772 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-02-26 19:29:32.552  INFO 5772 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-26 19:29:36.186  INFO 5772 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-02-26 19:29:36.378  INFO 5772 --- [main] tourGuide.gpsservices.GpsServiceTest     : Started GpsServiceTest in 23.902 seconds (JVM running for 28.976)
+2021-02-26 19:29:38.548  INFO 5772 --- [main] tourGuide.api.TourGuideServiceTest       : No active profile set, falling back to default profiles: default
+2021-02-26 19:29:39.971  INFO 5772 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=75222991-ce20-370d-9108-c73846a7d9fe
+2021-02-26 19:29:41.502  WARN 5772 --- [main] o.s.c.n.a.ArchaiusAutoConfiguration      : Netflix ConfigurationManager has already been installed, unable to re-install
+2021-02-26 19:29:42.611  INFO 5772 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-26 19:29:45.018  INFO 5772 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-02-26 19:29:45.168  INFO 5772 --- [main] tourGuide.api.TourGuideServiceTest       : Started TourGuideServiceTest in 8.364 seconds (JVM running for 37.759)
+2021-02-26 19:29:46.763  INFO 5772 --- [main] tourGuide.api.UserServiceTest            : No active profile set, falling back to default profiles: default
+2021-02-26 19:29:47.704  INFO 5772 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=75222991-ce20-370d-9108-c73846a7d9fe
+2021-02-26 19:29:47.754  INFO 5772 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'tourGuide.api.GpsClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-26 19:29:47.771  INFO 5772 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'tourGuide.api.RewardClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-26 19:29:47.784  INFO 5772 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'tourGuide.api.TripClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-26 19:29:49.398  WARN 5772 --- [main] o.s.c.n.a.ArchaiusAutoConfiguration      : Netflix ConfigurationManager has already been installed, unable to re-install
+2021-02-26 19:29:49.694  INFO 5772 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-26 19:29:51.623  INFO 5772 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-02-26 19:29:51.786  INFO 5772 --- [main] tourGuide.api.UserServiceTest            : Started UserServiceTest in 6.452 seconds (JVM running for 44.383)
+2021-02-26 19:29:53.349  INFO 5772 --- [main] t.rewardservices.RewardsServiceTest      : No active profile set, falling back to default profiles: default
+2021-02-26 19:29:54.740  INFO 5772 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=75222991-ce20-370d-9108-c73846a7d9fe
+2021-02-26 19:29:56.271  WARN 5772 --- [main] o.s.c.n.a.ArchaiusAutoConfiguration      : Netflix ConfigurationManager has already been installed, unable to re-install
+2021-02-26 19:29:56.542  INFO 5772 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-26 19:29:58.403  INFO 5772 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-02-26 19:29:58.504  INFO 5772 --- [main] t.rewardservices.RewardsServiceTest      : Started RewardsServiceTest in 6.632 seconds (JVM running for 51.1)
+2021-02-26 19:30:00.975  INFO 5772 --- [main] tourGuide.tripservices.TripServiceTest   : No active profile set, falling back to default profiles: default
+2021-02-26 19:30:01.760  INFO 5772 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=75222991-ce20-370d-9108-c73846a7d9fe
+2021-02-26 19:30:02.702  WARN 5772 --- [main] o.s.c.n.a.ArchaiusAutoConfiguration      : Netflix ConfigurationManager has already been installed, unable to re-install
+2021-02-26 19:30:02.885  INFO 5772 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-26 19:30:04.433  INFO 5772 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-02-26 19:30:04.502  INFO 5772 --- [main] tourGuide.tripservices.TripServiceTest   : Started TripServiceTest in 5.524 seconds (JVM running for 57.107)
+2021-02-26 19:30:04.590  INFO 5772 --- [main] t.integration.TourGuidePerformanceIT     : givenUsers_whenTrackAllUsers_thenTimeElapsedBelowLimit expected for 100 users in 7 seconds
+2021-02-26 19:30:09.101  INFO 5772 --- [main] t.integration.TourGuidePerformanceIT     : givenUsers_whenAddAllNewRewardsAllUsers_thenTimeElapsedBelowLimit expected for 100 users in 58 seconds
+2021-02-26 19:30:17.225  INFO 5772 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-02-26 19:30:17.226  INFO 5772 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-02-26 19:30:17.263  INFO 5772 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 37 ms
+2021-02-26 19:30:17.595  INFO 5772 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-02-26 19:30:17.611  INFO 5772 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-02-26 19:30:17.611  INFO 5772 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2021-02-26 19:30:21.657  INFO 5772 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-02-26 19:30:21.667  INFO 5772 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-02-26 19:30:21.668  INFO 5772 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2021-02-26 19:30:25.730  INFO 5772 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-02-26 19:30:25.737  INFO 5772 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-02-26 19:30:25.738  INFO 5772 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2021-02-26 19:30:29.779  INFO 5772 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-02-26 19:30:29.785  INFO 5772 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-02-26 19:30:29.786  INFO 5772 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2021-02-26 19:30:29.879  INFO 5772 --- [Thread-34] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-26 19:30:29.879  INFO 5772 --- [Thread-27] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-26 19:30:29.879  INFO 5772 --- [Thread-13] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-26 19:30:29.879  INFO 5772 --- [Thread-20] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-26 19:30:29.863  INFO 5772 --- [Thread-7] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-26 19:42:41.143  INFO 11276 --- [main] tourGuide.gpsservices.GpsServiceTest     : No active profile set, falling back to default profiles: default
+2021-02-26 19:42:43.316  INFO 11276 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=75222991-ce20-370d-9108-c73846a7d9fe
+2021-02-26 19:42:48.164  WARN 11276 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2021-02-26 19:42:48.172  INFO 11276 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-02-26 19:42:48.184  WARN 11276 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2021-02-26 19:42:48.184  INFO 11276 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-02-26 19:42:48.785  INFO 11276 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-26 19:42:52.333  INFO 11276 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-02-26 19:42:52.519  INFO 11276 --- [main] tourGuide.gpsservices.GpsServiceTest     : Started GpsServiceTest in 14.375 seconds (JVM running for 16.675)
+2021-02-26 19:42:54.459  INFO 11276 --- [main] tourGuide.api.TourGuideServiceTest       : No active profile set, falling back to default profiles: default
+2021-02-26 19:42:55.272  INFO 11276 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=75222991-ce20-370d-9108-c73846a7d9fe
+2021-02-26 19:42:56.600  WARN 11276 --- [main] o.s.c.n.a.ArchaiusAutoConfiguration      : Netflix ConfigurationManager has already been installed, unable to re-install
+2021-02-26 19:42:57.403  INFO 11276 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-26 19:42:59.635  INFO 11276 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-02-26 19:42:59.757  INFO 11276 --- [main] tourGuide.api.TourGuideServiceTest       : Started TourGuideServiceTest in 6.947 seconds (JVM running for 23.904)
+2021-02-26 19:43:01.300  INFO 11276 --- [main] tourGuide.api.UserServiceTest            : No active profile set, falling back to default profiles: default
+2021-02-26 19:43:02.112  INFO 11276 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=75222991-ce20-370d-9108-c73846a7d9fe
+2021-02-26 19:43:02.152  INFO 11276 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'tourGuide.api.GpsClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-26 19:43:02.152  INFO 11276 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'tourGuide.api.RewardClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-26 19:43:02.160  INFO 11276 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'tourGuide.api.TripClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-26 19:43:03.803  WARN 11276 --- [main] o.s.c.n.a.ArchaiusAutoConfiguration      : Netflix ConfigurationManager has already been installed, unable to re-install
+2021-02-26 19:43:04.280  INFO 11276 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-26 19:43:06.494  INFO 11276 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-02-26 19:43:06.629  INFO 11276 --- [main] tourGuide.api.UserServiceTest            : Started UserServiceTest in 6.778 seconds (JVM running for 30.783)
+2021-02-26 19:43:07.999  INFO 11276 --- [main] t.rewardservices.RewardsServiceTest      : No active profile set, falling back to default profiles: default
+2021-02-26 19:43:08.995  INFO 11276 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=75222991-ce20-370d-9108-c73846a7d9fe
+2021-02-26 19:43:10.195  WARN 11276 --- [main] o.s.c.n.a.ArchaiusAutoConfiguration      : Netflix ConfigurationManager has already been installed, unable to re-install
+2021-02-26 19:43:10.539  INFO 11276 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-26 19:43:12.423  INFO 11276 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-02-26 19:43:12.517  INFO 11276 --- [main] t.rewardservices.RewardsServiceTest      : Started RewardsServiceTest in 5.809 seconds (JVM running for 36.669)
+2021-02-26 19:43:14.892  INFO 11276 --- [main] tourGuide.tripservices.TripServiceTest   : No active profile set, falling back to default profiles: default
+2021-02-26 19:43:15.406  INFO 11276 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=75222991-ce20-370d-9108-c73846a7d9fe
+2021-02-26 19:43:16.507  WARN 11276 --- [main] o.s.c.n.a.ArchaiusAutoConfiguration      : Netflix ConfigurationManager has already been installed, unable to re-install
+2021-02-26 19:43:16.803  INFO 11276 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-26 19:43:18.292  INFO 11276 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-02-26 19:43:18.401  INFO 11276 --- [main] tourGuide.tripservices.TripServiceTest   : Started TripServiceTest in 5.45 seconds (JVM running for 42.549)
+2021-02-26 19:43:18.498  INFO 11276 --- [main] t.integration.TourGuidePerformanceIT     : givenUsers_whenTrackAllUsers_thenTimeElapsedBelowLimit expected for 100 users in 7 seconds
+2021-02-26 19:43:22.674  INFO 11276 --- [main] t.integration.TourGuidePerformanceIT     : givenUsers_whenAddAllNewRewardsAllUsers_thenTimeElapsedBelowLimit expected for 100 users in 58 seconds
+2021-02-26 19:43:30.747  INFO 11276 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-02-26 19:43:30.753  INFO 11276 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-02-26 19:43:30.772  INFO 11276 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 19 ms
+2021-02-26 19:43:31.016  INFO 11276 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-02-26 19:43:31.016  INFO 11276 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-02-26 19:43:31.016  INFO 11276 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2021-02-26 19:43:35.059  INFO 11276 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-02-26 19:43:35.069  INFO 11276 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-02-26 19:43:35.070  INFO 11276 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2021-02-26 19:43:39.139  INFO 11276 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-02-26 19:43:39.146  INFO 11276 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-02-26 19:43:39.147  INFO 11276 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2021-02-26 19:43:43.189  INFO 11276 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-02-26 19:43:43.190  INFO 11276 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-02-26 19:43:43.193  INFO 11276 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2021-02-26 19:43:43.254  INFO 11276 --- [Thread-27] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-26 19:43:43.254  INFO 11276 --- [Thread-13] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-26 19:43:43.255  INFO 11276 --- [Thread-34] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-26 19:43:43.251  INFO 11276 --- [Thread-20] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-26 19:43:43.255  INFO 11276 --- [Thread-7] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'

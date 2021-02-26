@@ -4,7 +4,10 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.lang3.time.StopWatch;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -13,13 +16,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import gpsUtil.location.Attraction;
-import gpsUtil.location.VisitedLocation;
-import tourGuide.gpsservices.GpsService;
+import tourGuide.api.GpsRequestService;
+import tourGuide.api.RewardRequestService;
+import tourGuide.model.AttractionData;
 import tourGuide.model.User;
-import tourGuide.rewardservices.RewardService;
+import tourGuide.model.VisitedLocationData;
 import tourGuide.trackerservices.TrackerService;
 import tourGuide.user.UserService;
+
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -31,91 +35,72 @@ public class TourGuidePerformanceIT {
 	@Autowired
 	private UserService userService;
 	@Autowired
-	private RewardService rewardService;
+	private RewardRequestService rewardRequest;
 	@Autowired
-	private GpsService gpsService;
+	private GpsRequestService gpsRequest;
 
-	/*
-	 * A note on performance improvements:
-	 * 
-	 * The number of users generated for the high volume tests can be easily
-	 * adjusted via this method:
-	 * 
-	 * InternalTestHelper.setInternalUserNumber(100000);
-	 * 
-	 * 
-	 * These tests can be modified to suit new solutions, just as long as the
-	 * performance metrics at the end of the tests remains consistent.
-	 * 
-	 * These are performance metrics that we are trying to hit:
-	 * 
-	 * highVolumeTrackLocation: 100,000 users within 15 minutes:
-	 * assertTrue(TimeUnit.MINUTES.toSeconds(15) >=
-	 * TimeUnit.MILLISECONDS.toSeconds(stopWatch.getTime()));
-	 *
-	 * highVolumeGetRewards: 100,000 users within 20 minutes:
-	 * assertTrue(TimeUnit.MINUTES.toSeconds(20) >=
-	 * TimeUnit.MILLISECONDS.toSeconds(stopWatch.getTime()));
-	 */
-
+//	@Ignore
 	@Test // Performance before optimization
 	public void given100Users_whenTrackAllUsers_thenTimeElapsedBelow7Seconds() {
-		// GIVEN
-		userService.initializeInternalUsers(100, true);
-		long maximalExpectedDuration = 7;
-		// WHEN
-		long duration = trackerService.trackAllUsers();
-		// THEN
-		assertTrue(duration <= maximalExpectedDuration);
+		givenUsers_whenTrackAllUsers_thenTimeElapsedBelowLimit(100, 7);
 	}
 
-	@Test // Performance before optimization
-	public void given100Users_whenAddAllNewRewardsAllUsers_thenTimeElapsedBelow58Seconds() {
-		// GIVEN
-		userService.initializeInternalUsers(100, false);
-		List<User> allUsers = userService.getAllUsers();
-		List<Attraction> allAttractions = gpsService.getAllAttractions();
-		Attraction anyExistingAttraction = allAttractions.get(0);
-		long maximalExpectedDuration = 58;
-		for (User user : allUsers) {
-			user.addToVisitedLocations(new VisitedLocation(user.getUserId(), anyExistingAttraction, new Date()));
-		}
-		// WHEN
-		long duration = rewardService.addAllNewRewardsAllUsers(allUsers, allAttractions);
-		// THEN
-		for (User user : allUsers) {
-			assertTrue(user.getUserRewards().size() > 0);
-		}
-		assertTrue(duration <= maximalExpectedDuration);
-	}
-
+	@Ignore
 	@Test // Performance after optimization
 	public void given100000Users_whenTrackAllUsers_thenTimeElapsedBelow15Minutes() {
+		givenUsers_whenTrackAllUsers_thenTimeElapsedBelowLimit(100 * 1000, 15 * 60);
+	}
+
+//	@Ignore
+	@Test // Performance before optimization
+	public void given100Users_whenAddAllNewRewardsAllUsers_thenTimeElapsedBelow58Seconds() {
+		givenUsers_whenAddAllNewRewardsAllUsers_thenTimeElapsedBelowLimit(100, 58);
+	}
+
+	@Ignore
+	@Test // Performance after optimization
+	public void given100000Users_whenAddAllNewRewardsAllUsers_thenTimeElapsedBelow20Minutes() {
+		givenUsers_whenAddAllNewRewardsAllUsers_thenTimeElapsedBelowLimit(100 * 1000, 20 * 60);
+	}
+
+	private void givenUsers_whenTrackAllUsers_thenTimeElapsedBelowLimit(int numberOfUsers,
+			long maximalExpectedDuration) {
+		logger.info("givenUsers_whenTrackAllUsers_thenTimeElapsedBelowLimit expected for " + numberOfUsers + " users in "
+				+ maximalExpectedDuration + " seconds");
 		// GIVEN
-		userService.initializeInternalUsers(100000, true);
-		long maximalExpectedDuration = 15 * 60;
+		userService.initializeInternalUsers(numberOfUsers, true);
 		// WHEN
-		long duration = trackerService.trackAllUsers();
+		StopWatch stopWatch = new StopWatch();
+		stopWatch.start();
+		trackerService.trackAllUsers();
+		stopWatch.stop();
+		long duration = TimeUnit.MILLISECONDS.toSeconds(stopWatch.getTime());
+		logger.info("trackAllUsers required " + duration + " seconds for " + numberOfUsers + " users");
 		// THEN
 		assertTrue(duration <= maximalExpectedDuration);
 	}
 
-	@Test // Performance after optimization
-	public void given100000Users_whenAddAllNewRewardsAllUsers_thenTimeElapsedBelow20Minutes() {
+	private void givenUsers_whenAddAllNewRewardsAllUsers_thenTimeElapsedBelowLimit(int numberOfUsers,
+			long maximalExpectedDuration) {
+		logger.info("givenUsers_whenAddAllNewRewardsAllUsers_thenTimeElapsedBelowLimit expected for " + numberOfUsers
+				+ " users in " + maximalExpectedDuration + " seconds");
 		// GIVEN
-		userService.initializeInternalUsers(100000, false);
-		List<User> allUsers = userService.getAllUsers();
-		List<Attraction> allAttractions = gpsService.getAllAttractions();
-		Attraction anyExistingAttraction = allAttractions.get(0);
-		long maximalExpectedDuration = 20 * 60;
-
-		for (User user : allUsers) {
-			user.addToVisitedLocations(new VisitedLocation(user.getUserId(), anyExistingAttraction, new Date()));
+		userService.initializeInternalUsers(numberOfUsers, false);
+		List<User> givenUsers = userService.getAllUsers();
+		List<AttractionData> allAttractions = gpsRequest.getAllAttractions();
+		AttractionData anyExistingAttraction = allAttractions.get(0);
+		for (User user : givenUsers) {
+			user.addToVisitedLocations(new VisitedLocationData(user.getUserId(), anyExistingAttraction, new Date()));
 		}
 		// WHEN
-		long duration = rewardService.addAllNewRewardsAllUsers(allUsers, allAttractions);
+		StopWatch stopWatch = new StopWatch();
+		stopWatch.start();
+		List<User> resultUsers = rewardRequest.addAllNewRewardsAllUsers(givenUsers, allAttractions);
+		stopWatch.stop();
+		long duration = TimeUnit.MILLISECONDS.toSeconds(stopWatch.getTime());
+		logger.info("addAllNewRewardsAllUsers required " + duration + " seconds for " + numberOfUsers + " users");
 		// THEN
-		for (User user : allUsers) {
+		for (User user : resultUsers) {
 			assertTrue(user.getUserRewards().size() > 0);
 		}
 		assertTrue(duration <= maximalExpectedDuration);

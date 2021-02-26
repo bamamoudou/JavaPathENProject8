@@ -2,10 +2,6 @@ package tourGuide.model;
 
 import java.util.UUID;
 
-import gpsUtil.location.Attraction;
-import gpsUtil.location.Location;
-import tourGuide.rewardservices.RewardService;
-
 /**
  * AttractionNearby is the data format exchanged in JSON with the client for the
  * getNearbyAttractions controller
@@ -14,20 +10,25 @@ import tourGuide.rewardservices.RewardService;
  * 
  */
 public class AttractionNearby {
-	public UUID id; // Basically not requested but required for further reuse of object instances
-	public String name;
-	public Location attractionLocation;
-	public Location userLocation;
+	public final UUID id; // Basically not requested but required for further reuse of object instances
+	public final String name;
+	public LocationData attractionLocation;
+	public LocationData userLocation;
 	public double distance;
 	public int rewardPoints;
 
-	public AttractionNearby(Attraction attraction, User user, int rewardPoints) {
-		id = attraction.attractionId;
-		name = attraction.attractionName;
-		attractionLocation = new Location(attraction.latitude, attraction.longitude);
-		Location userCurrentLocation = user.getLastVisitedLocation().location;
-		userLocation = new Location(userCurrentLocation.latitude, userCurrentLocation.longitude);
-		distance = RewardService.getDistance(attractionLocation, userLocation);
+	public AttractionNearby(AttractionData attraction, User user, int rewardPoints) {
+		id = attraction.id;
+		name = attraction.name;
+		attractionLocation = new LocationData(attraction.latitude, attraction.longitude);
+		VisitedLocationData visitedLocation = user.getLastVisitedLocation();
+		userLocation = new LocationData(visitedLocation.location.latitude, visitedLocation.location.longitude);
+		distance = userLocation.getDistance(attractionLocation);
 		this.rewardPoints = rewardPoints;
+	}
+
+	public AttractionNearby() {
+		id = new UUID(0, 0);
+		name = new String();
 	}
 }

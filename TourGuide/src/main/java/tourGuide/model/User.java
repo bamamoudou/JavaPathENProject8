@@ -1,28 +1,30 @@
 package tourGuide.model;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.UUID;
-
-import gpsUtil.location.VisitedLocation;
 
 public class User {
 	private final UUID userId;
 	private final String userName;
 	private String phoneNumber;
 	private String emailAddress;
-	private Date latestLocationTimestamp;
-	private List<VisitedLocation> visitedLocations = new ArrayList<>();
-	private List<UserReward> userRewards = new ArrayList<>();
-	private UserPreferences userPreferences = new UserPreferences();
+	private List<VisitedLocationData> visitedLocations;
+	private List<UserReward> userRewards;
+	private UserPreferences userPreferences;
 
-//	private List<Provider> tripDeals = new ArrayList<>(); // NOT USED
 	public User(UUID userId, String userName, String phoneNumber, String emailAddress) {
 		this.userId = userId;
 		this.userName = userName;
 		this.phoneNumber = phoneNumber;
 		this.emailAddress = emailAddress;
+		visitedLocations = new ArrayList<>();
+		userRewards = new ArrayList<>();
+		userPreferences = new UserPreferences();
+	}
+
+	public User() {
+		this(new UUID(0, 0), new String(), new String(), new String());
 	}
 
 	public UUID getUserId() {
@@ -49,19 +51,11 @@ public class User {
 		return emailAddress;
 	}
 
-	public void setLatestLocationTimestamp(Date latestLocationTimestamp) {
-		this.latestLocationTimestamp = latestLocationTimestamp;
-	}
-
-	public Date getLatestLocationTimestamp() {
-		return latestLocationTimestamp;
-	}
-
-	public void addToVisitedLocations(VisitedLocation visitedLocation) {
+	public void addToVisitedLocations(VisitedLocationData visitedLocation) {
 		visitedLocations.add(visitedLocation);
 	}
 
-	public List<VisitedLocation> getVisitedLocations() {
+	public List<VisitedLocationData> getVisitedLocations() {
 		return visitedLocations;
 	}
 
@@ -70,8 +64,7 @@ public class User {
 	}
 
 	public void addUserReward(UserReward userReward) {
-		if (userRewards.stream().filter(r -> r.attraction.attractionName.equals(userReward.attraction.attractionName))
-				.count() == 0) {
+		if (userRewards.stream().filter(r -> r.attraction.name.equals(userReward.attraction.name)).count() == 0) {
 			userRewards.add(userReward);
 		}
 	}
@@ -88,19 +81,11 @@ public class User {
 		this.userPreferences = userPreferences;
 	}
 
-	public VisitedLocation getLastVisitedLocation() {
+	public VisitedLocationData getLastVisitedLocation() {
 		int listLength = visitedLocations.size();
-		/*
-		 * if (listLength == 0) { // May happen through Tracker thread for instance
-		 * return null; }
-		 */
+		if (listLength == 0) {
+			return null;
+		}
 		return visitedLocations.get(listLength - 1);
 	}
-
-	/*
-	 * NOT USED public void setTripDeals(List<Provider> tripDeals) { this.tripDeals
-	 * = tripDeals; }
-	 * 
-	 * public List<Provider> getTripDeals() { return tripDeals; }
-	 */
 }
