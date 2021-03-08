@@ -1,0 +1,14 @@
+2021-03-08 19:45:31.550  INFO 9276 --- [main] tourGuide.services.UserServiceTest       : Starting UserServiceTest on DESKTOP-1N3M7NR with PID 9276 (started by adoba in C:\Users\adoba\eclipse-workspace\JavaPathENProject8\TourGuide)
+2021-03-08 19:45:31.553  INFO 9276 --- [main] tourGuide.services.UserServiceTest       : No active profile set, falling back to default profiles: default
+2021-03-08 19:45:34.645  INFO 9276 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-08 19:45:35.056  INFO 9276 --- [main] o.j.m.DefaultMonetaryContextFactory      : Using custom MathContext: precision=256, roundingMode=HALF_EVEN
+2021-03-08 19:45:38.286  INFO 9276 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-03-08 19:45:38.463  INFO 9276 --- [main] tourGuide.services.UserServiceTest       : Started UserServiceTest in 7.755 seconds (JVM running for 9.804)
+2021-03-08 19:45:39.370  INFO 9276 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-08 19:45:39.463  INFO 9276 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-08 19:45:39.466  INFO 9276 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-08 19:45:39.467  INFO 9276 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-08 19:45:39.571  INFO 9276 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-08 19:46:19.756  INFO 9276 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-08 19:46:19.780  INFO 9276 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-08 19:46:19.881  INFO 9276 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
