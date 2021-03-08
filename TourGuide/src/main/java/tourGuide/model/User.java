@@ -1,4 +1,4 @@
-package tourGuide.user;
+package tourGuide.model;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.UUID;
 
 import gpsUtil.location.VisitedLocation;
-import tripPricer.Provider;
 
 public class User {
 	private final UUID userId;
@@ -17,8 +16,8 @@ public class User {
 	private List<VisitedLocation> visitedLocations = new ArrayList<>();
 	private List<UserReward> userRewards = new ArrayList<>();
 	private UserPreferences userPreferences = new UserPreferences();
-	private List<Provider> tripDeals = new ArrayList<>();
 
+//	private List<Provider> tripDeals = new ArrayList<>(); // NOT USED
 	public User(UUID userId, String userName, String phoneNumber, String emailAddress) {
 		this.userId = userId;
 		this.userName = userName;
@@ -92,6 +91,7 @@ public class User {
 		return visitedLocations.get(visitedLocations.size() - 1);
 	}
 
+<<<<<<< HEAD:TourGuide/src/main/java/tourGuide/user/User.java
 	public void setTripDeals(List<Provider> tripDeals) {
 		this.tripDeals = tripDeals;
 	}
@@ -99,4 +99,12 @@ public class User {
 	public List<Provider> getTripDeals() {
 		return tripDeals;
 	}
+=======
+	/*
+	 * NOT USED public void setTripDeals(List<Provider> tripDeals) { this.tripDeals
+	 * = tripDeals; }
+	 * 
+	 * public List<Provider> getTripDeals() { return tripDeals; }
+	 */
+>>>>>>> 108fb4f... Split app to service:TourGuide/src/main/java/tourGuide/model/User.java
 }

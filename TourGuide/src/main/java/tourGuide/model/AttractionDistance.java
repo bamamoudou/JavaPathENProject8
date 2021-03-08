@@ -2,7 +2,7 @@ package tourGuide.model;
 
 import gpsUtil.location.Attraction;
 import gpsUtil.location.Location;
-import tourGuide.service.RewardsService;
+import tourGuide.rewardservices.RewardService;
 
 public class AttractionDistance {
 	/**private Location fromLocation;
@@ -20,9 +20,9 @@ public class AttractionDistance {
 				|| this.fromLocation.longitude != that.fromLocation.longitude) {
 			throw new RuntimeException("Trying to compare attractions based on different origins");
 		}
-		double distanceToThis = RewardsService.getDistance(this.fromLocation,
+		double distanceToThis = RewardService.getDistance(this.fromLocation,
 				new Location(this.latitude, this.longitude));
-		double distanceToThat = RewardsService.getDistance(that.fromLocation,
+		double distanceToThat = RewardService.getDistance(that.fromLocation,
 				new Location(that.latitude, that.longitude));
 		return Double.valueOf(distanceToThis).compareTo(Double.valueOf(distanceToThat));
 	}
