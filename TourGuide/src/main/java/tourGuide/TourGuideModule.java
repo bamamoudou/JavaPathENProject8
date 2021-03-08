@@ -20,7 +20,7 @@ public class TourGuideModule {
 
 	@Bean
 	public GpsUtil getGpsUtil() {
-		Locale.setDefault(Locale.ENGLISH);
+		Locale.setDefault(Locale.US);
 		return new GpsUtil();
 	}
 

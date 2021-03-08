@@ -4,16 +4,16 @@ import gpsUtil.location.Attraction;
 import gpsUtil.location.VisitedLocation;
 
 public class UserReward {
-
 	public final VisitedLocation visitedLocation;
 	public final Attraction attraction;
 	private int rewardPoints;
+
 <span class="fc" id="L11">	public UserReward(VisitedLocation visitedLocation, Attraction attraction, int rewardPoints) {</span>
 <span class="fc" id="L12">		this.visitedLocation = visitedLocation;</span>
 <span class="fc" id="L13">		this.attraction = attraction;</span>
 <span class="fc" id="L14">		this.rewardPoints = rewardPoints;</span>
 <span class="fc" id="L15">	}</span>
-	
+
 <span class="nc" id="L17">	public UserReward(VisitedLocation visitedLocation, Attraction attraction) {</span>
 <span class="nc" id="L18">		this.visitedLocation = visitedLocation;</span>
 <span class="nc" id="L19">		this.attraction = attraction;</span>
@@ -22,10 +22,9 @@ public class UserReward {
 	public void setRewardPoints(int rewardPoints) {
 <span class="nc" id="L23">		this.rewardPoints = rewardPoints;</span>
 <span class="nc" id="L24">	}</span>
-	
+
 	public int getRewardPoints() {
 <span class="nc" id="L27">		return rewardPoints;</span>
 	}
-	
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

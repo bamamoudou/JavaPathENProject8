@@ -12,3 +12,18 @@
 2021-03-08 19:46:19.756  INFO 9276 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
 2021-03-08 19:46:19.780  INFO 9276 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
 2021-03-08 19:46:19.881  INFO 9276 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-08 19:54:29.218  INFO 16744 --- [Test worker] tourGuide.services.UserServiceTest       : Starting UserServiceTest on DESKTOP-1N3M7NR with PID 16744 (started by adoba in C:\Users\adoba\eclipse-workspace\JavaPathENProject8\TourGuide)
+2021-03-08 19:54:29.227  INFO 16744 --- [Test worker] tourGuide.services.UserServiceTest       : No active profile set, falling back to default profiles: default
+2021-03-08 19:54:33.807  INFO 16744 --- [Test worker] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-08 19:54:38.374  INFO 16744 --- [Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-03-08 19:54:38.552  INFO 16744 --- [Test worker] tourGuide.services.UserServiceTest       : Started UserServiceTest in 10.911 seconds (JVM running for 53.601)
+2021-03-08 19:58:01.838  INFO 16812 --- [Test worker] tourGuide.services.UserServiceTest       : Starting UserServiceTest on DESKTOP-1N3M7NR with PID 16812 (started by adoba in C:\Users\adoba\eclipse-workspace\JavaPathENProject8\TourGuide)
+2021-03-08 19:58:01.844  INFO 16812 --- [Test worker] tourGuide.services.UserServiceTest       : No active profile set, falling back to default profiles: default
+2021-03-08 19:58:06.573  INFO 16812 --- [Test worker] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-08 19:58:11.138  INFO 16812 --- [Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-03-08 19:58:11.342  INFO 16812 --- [Test worker] tourGuide.services.UserServiceTest       : Started UserServiceTest in 11.425 seconds (JVM running for 54.197)
+2021-03-08 20:01:36.202  INFO 6364 --- [Test worker] tourGuide.services.UserServiceTest       : Starting UserServiceTest on DESKTOP-1N3M7NR with PID 6364 (started by adoba in C:\Users\adoba\eclipse-workspace\JavaPathENProject8\TourGuide)
+2021-03-08 20:01:36.225  INFO 6364 --- [Test worker] tourGuide.services.UserServiceTest       : No active profile set, falling back to default profiles: default
+2021-03-08 20:01:40.246  INFO 6364 --- [Test worker] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-08 20:01:44.528  INFO 6364 --- [Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-03-08 20:01:44.705  INFO 6364 --- [Test worker] tourGuide.services.UserServiceTest       : Started UserServiceTest in 10.018 seconds (JVM running for 56.684)

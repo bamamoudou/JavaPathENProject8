@@ -4,6 +4,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -51,6 +52,7 @@ public class TestPerformance {
 
 	@Test
 	public void highVolumeTrackLocation() throws ExecutionException, InterruptedException {
+		Locale.setDefault(Locale.US);
 		GpsUtil gpsUtil = new GpsUtil();
 		RewardsService rewardsService = new RewardsService(gpsUtil, new RewardCentral(), this.executorService);
 		// Users should be incremented up to 100,000, and test finishes within 15

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AttractionNearby.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">TourGuide</a> &gt; <a href="index.source.html" class="el_package">tourGuide.model</a> &gt; <span class="el_source">AttractionNearby.java</span></div><h1>AttractionNearby.java</h1><pre class="source lang-java linenums">package tourGuide.model;
+
+import java.util.UUID;
+
+import gpsUtil.location.Attraction;
+import gpsUtil.location.Location;
+import tourGuide.service.RewardsService;
+import tourGuide.user.User;
+
+/**
+ * AttractionNearby is the data format exchanged in JSON with the client for the
+ * getNearbyAttractions controller
+ * 
+ * Members are public as tolerated for basic data structure
+ * 
+ */
+<span class="nc" id="L17">public class AttractionNearby {</span>
+	/**public UUID id; // Basically not requested but required for further reuse of object instances
+	 
+	public String name;
+	public Location attractionLocation;
+	public Location userLocation;
+	public double distance;
+	public int rewardPoints;
+
+	public AttractionNearby(Attraction attraction, User user, int rewardPoints) {
+		id = attraction.attractionId;
+		name = attraction.attractionName;
+		attractionLocation = new Location(attraction.latitude, attraction.longitude);
+		Location userCurrentLocation = user.getLastVisitedLocation().location;
+		userLocation = new Location(userCurrentLocation.latitude, userCurrentLocation.longitude);
+		distance = RewardsService.getDistance(attractionLocation, userLocation);
+		this.rewardPoints = rewardPoints;
+	}
+	
+	*/
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.util.List;
+import java.util.Locale;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
@@ -27,6 +28,7 @@ public class TestTourGuideService {
 
 	@Test
 	public void getUserLocation() throws ExecutionException, InterruptedException {
+		Locale.setDefault(Locale.US);
 		GpsUtil gpsUtil = new GpsUtil();
 		RewardsService rewardsService = new RewardsService(gpsUtil, new RewardCentral(), this.executorService);
 		InternalTestHelper.setInternalUserNumber(0);
@@ -83,6 +85,7 @@ public class TestTourGuideService {
 
 	@Test
 	public void trackUser() throws ExecutionException, InterruptedException {
+		Locale.setDefault(Locale.US);
 		GpsUtil gpsUtil = new GpsUtil();
 		RewardsService rewardsService = new RewardsService(gpsUtil, new RewardCentral(), this.executorService);
 		InternalTestHelper.setInternalUserNumber(0);
