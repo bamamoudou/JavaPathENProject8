@@ -1,8 +1,10 @@
 package tourGuide.service;
 
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutorService;
+import java.util.stream.Collectors;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import gpsUtil.GpsUtil;
@@ -16,16 +18,20 @@ import tourGuide.user.UserReward;
 @Service
 public class RewardsService {
 	private static final double STATUTE_MILES_PER_NAUTICAL_MILE = 1.15077945;
-	private static final double EARTH_RADIUS_IN_NAUTICAL_MILES = 3440.0647948;
 
 	// proximity in miles
 	private int defaultProximityBuffer = 10;
 	private int proximityBuffer = defaultProximityBuffer;
-	// private int attractionProximityRange = 200;
-	@Autowired
-	private GpsUtil gpsUtil;
-	@Autowired
-	private RewardCentral rewardCentral;
+	private int attractionProximityRange = 200;
+	private final GpsUtil gpsUtil;
+	private final RewardCentral rewardsCentral;
+	private ExecutorService executorService;
+
+	public RewardsService(GpsUtil gpsUtil, RewardCentral rewardCentral, ExecutorService executorService) {
+		this.gpsUtil = gpsUtil;
+		this.rewardsCentral = rewardCentral;
+		this.executorService = executorService;
+	}
 
 	public void setProximityBuffer(int proximityBuffer) {
 		this.proximityBuffer = proximityBuffer;
@@ -51,40 +57,44 @@ public class RewardsService {
 		}
 	}
 
-	/*
-	 * Method not used public boolean isWithinAttractionProximity(Attraction
-	 * attraction, Location location) { return getDistance(attraction, location) >
-	 * attractionProximityRange ? false : true; }
-	 */
+	public CompletableFuture<Void> calculateRewardAsync(User user) {
+		return CompletableFuture.runAsync(() -> this.calculateRewards(user), executorService);
+	}
+
+	public CompletableFuture<List<Void>> calculateUsersListReward(List<User> usersList) {
+		List<CompletableFuture<Void>> allCalculatedRewardFutures = usersList.stream().map(this::calculateRewardAsync)
+				.collect(Collectors.toList());
+
+		CompletableFuture<Void> allFutures = CompletableFuture
+				.allOf(allCalculatedRewardFutures.toArray(new CompletableFuture[allCalculatedRewardFutures.size()]));
+
+		return allFutures.thenApply(
+				v -> allCalculatedRewardFutures.stream().map(CompletableFuture::join).collect(Collectors.toList()));
+	}
+
+	public boolean isWithinAttractionProximity(Attraction attraction, Location location) {
+		return !(getDistance(attraction, location) > attractionProximityRange);
+	}
 
 	private boolean nearAttraction(VisitedLocation visitedLocation, Attraction attraction) {
-		return getDistance(attraction, visitedLocation.location) > proximityBuffer ? false : true;
+		return !(getDistance(attraction, visitedLocation.location) > proximityBuffer);
 	}
 
-	public int getRewardPoints(Attraction attraction, User user) {
-		return rewardCentral.getAttractionRewardPoints(attraction.attractionId, user.getUserId());
+	private int getRewardPoints(Attraction attraction, User user) {
+		return rewardsCentral.getAttractionRewardPoints(attraction.attractionId, user.getUserId());
 	}
 
-	/**
-	 * Calculates distance in statute miles between locations Uses Spherical Law of
-	 * Cosines
-	 * 
-	 * @param loc1
-	 * @param loc2
-	 * @return calculated distance
-	 */
-
-	public static double getDistance(Location loc1, Location loc2) {
+	public double getDistance(Location loc1, Location loc2) {
 		double lat1 = Math.toRadians(loc1.latitude);
 		double lon1 = Math.toRadians(loc1.longitude);
 		double lat2 = Math.toRadians(loc2.latitude);
 		double lon2 = Math.toRadians(loc2.longitude);
 
-		double angleDistance = Math
+		double angle = Math
 				.acos(Math.sin(lat1) * Math.sin(lat2) + Math.cos(lat1) * Math.cos(lat2) * Math.cos(lon1 - lon2));
 
-		double nauticalMilesDistance = EARTH_RADIUS_IN_NAUTICAL_MILES * angleDistance;
-		double statuteMilesDistance = STATUTE_MILES_PER_NAUTICAL_MILE * nauticalMilesDistance;
-		return statuteMilesDistance;
+		double nauticalMiles = 60 * Math.toDegrees(angle);
+		double statuteMiles = STATUTE_MILES_PER_NAUTICAL_MILE * nauticalMiles;
+		return statuteMiles;
 	}
 }

@@ -63,7 +63,7 @@ public class User {
 	}
 
 	public List<VisitedLocation> getVisitedLocations() {
-		return visitedLocations;
+		return (List<VisitedLocation>) ((ArrayList<VisitedLocation>) visitedLocations).clone();
 	}
 
 	public void clearVisitedLocations() {
@@ -71,14 +71,13 @@ public class User {
 	}
 
 	public void addUserReward(UserReward userReward) {
-		if (userRewards.stream().filter(r -> r.attraction.attractionName.equals(userReward.attraction.attractionName))
-				.count() == 0) {
+		if (userRewards.stream().filter(r -> !r.attraction.attractionName.equals(userReward.attraction)).count() == 0) {
 			userRewards.add(userReward);
 		}
 	}
 
 	public List<UserReward> getUserRewards() {
-		return userRewards;
+		return (List<UserReward>) ((ArrayList<UserReward>) userRewards).clone();
 	}
 
 	public UserPreferences getUserPreferences() {
@@ -90,12 +89,7 @@ public class User {
 	}
 
 	public VisitedLocation getLastVisitedLocation() {
-		int listLength = visitedLocations.size();
-		/*
-		 * if (listLength == 0) { // May happen through Tracker thread for instance
-		 * return null; }
-		 */
-		return visitedLocations.get(listLength - 1);
+		return visitedLocations.get(visitedLocations.size() - 1);
 	}
 
 	public void setTripDeals(List<Provider> tripDeals) {
@@ -105,5 +99,4 @@ public class User {
 	public List<Provider> getTripDeals() {
 		return tripDeals;
 	}
-
 }

@@ -4,8 +4,8 @@ import gpsUtil.location.Attraction;
 import gpsUtil.location.Location;
 import tourGuide.service.RewardsService;
 
-public class AttractionDistance extends Attraction implements Comparable<AttractionDistance> {
-	private Location fromLocation;
+public class AttractionDistance {
+	/**private Location fromLocation;
 
 	public AttractionDistance(Location fromLocation, Attraction toAttraction) {
 		super(toAttraction.attractionName, toAttraction.city, toAttraction.state, toAttraction.latitude,
@@ -26,4 +26,5 @@ public class AttractionDistance extends Attraction implements Comparable<Attract
 				new Location(that.latitude, that.longitude));
 		return Double.valueOf(distanceToThis).compareTo(Double.valueOf(distanceToThat));
 	}
+	**/
 }

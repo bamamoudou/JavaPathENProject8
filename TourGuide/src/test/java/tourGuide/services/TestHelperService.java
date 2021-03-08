@@ -21,7 +21,7 @@ import tourGuide.user.UserPreferences;
 
 @Service
 public class TestHelperService {
-	public static int numberOfTestAttractions = TourGuideService.NUMBER_OF_PROPOSED_ATTRACTIONS * 2;
+/*	public static int numberOfTestAttractions = TourGuideService.NUMBER_OF_PROPOSED_ATTRACTIONS * 2;
 	public static double latitudeUserOne = 0.21;
 	public static double longitudeUserOne = -0.22;
 	public static double latitudeAttractionOne = 0.31;
@@ -59,4 +59,5 @@ public class TestHelperService {
 	 * public void deactivateInternalUsers() {
 	 * doNothing().when(userService).initializeInternalUsers(); }
 	 */
+	
 }

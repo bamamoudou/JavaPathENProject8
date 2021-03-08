@@ -15,7 +15,8 @@ import tourGuide.user.User;
  * 
  */
 public class AttractionNearby {
-	public UUID id; // Basically not requested but required for further reuse of object instances
+	/**public UUID id; // Basically not requested but required for further reuse of object instances
+	 
 	public String name;
 	public Location attractionLocation;
 	public Location userLocation;
@@ -31,4 +32,6 @@ public class AttractionNearby {
 		distance = RewardsService.getDistance(attractionLocation, userLocation);
 		this.rewardPoints = rewardPoints;
 	}
+	
+	*/
 }
