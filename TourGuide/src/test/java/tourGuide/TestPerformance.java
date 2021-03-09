@@ -57,7 +57,7 @@ public class TestPerformance {
 		executorService = Executors.newFixedThreadPool(1000);
 		gpsUtil = new GpsUtil();
 		rewardsService = new RewardsService(gpsUtil, new RewardCentral(), executorService);
-		InternalTestHelper.setInternalUserNumber(5); // Users should be incremented up to 100,000
+		InternalTestHelper.setInternalUserNumber(100000); // Users should be incremented up to 100,000
 		tourGuideService = new TourGuideService(gpsUtil, rewardsService, executorService);
 
 	}
