@@ -1,4 +1,4 @@
-package tourGuide.user;
+package tourGuide.model;
 
 import javax.money.CurrencyUnit;
 import javax.money.Monetary;
@@ -15,6 +15,9 @@ public class UserPreferences {
 	private int numberOfAdults = 1;
 	private int numberOfChildren = 0;
 
+	/**
+	 * Constructor
+	 */
 	public UserPreferences() {
 	}
 

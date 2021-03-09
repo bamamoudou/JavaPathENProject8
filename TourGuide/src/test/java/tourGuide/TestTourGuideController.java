@@ -43,7 +43,7 @@ public class TestTourGuideController {
 		runPath("/");
 	}
 
-	//@Test
+	@Test
 	public void getLocationTest() throws Exception {
 		runPath("/getLocation?userName=internalUser0");
 	}

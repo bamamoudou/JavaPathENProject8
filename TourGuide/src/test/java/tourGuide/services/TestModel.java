@@ -16,20 +16,15 @@ import javax.money.Monetary;
 
 import org.javamoney.moneta.Money;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
-import gpsUtil.location.Attraction;
-import gpsUtil.location.Location;
-import gpsUtil.location.VisitedLocation;
-import tourGuide.user.User;
-import tourGuide.user.UserPreferences;
-import tourGuide.user.UserReward;
-import tripPricer.Provider;
+import tourGuide.model.Attraction;
+import tourGuide.model.Location;
+import tourGuide.model.Provider;
+import tourGuide.model.User;
+import tourGuide.model.UserPreferences;
+import tourGuide.model.UserReward;
+import tourGuide.model.VisitedLocation;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
 public class TestModel {
 	@Test
 	public void testUserReward() {

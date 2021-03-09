@@ -1,12 +1,9 @@
-package tourGuide.user;
+package tourGuide.model;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
-
-import gpsUtil.location.VisitedLocation;
-import tripPricer.Provider;
 
 public class User {
 	private final UUID userId;
@@ -19,6 +16,14 @@ public class User {
 	private UserPreferences userPreferences = new UserPreferences();
 	private List<Provider> tripDeals = new ArrayList<>();
 
+	/**
+	 * Constructor
+	 * 
+	 * @param userId
+	 * @param userName
+	 * @param phoneNumber
+	 * @param emailAddress
+	 */
 	public User(UUID userId, String userName, String phoneNumber, String emailAddress) {
 		this.userId = userId;
 		this.userName = userName;
@@ -71,8 +76,9 @@ public class User {
 	}
 
 	public void addUserReward(UserReward userReward) {
-		if (userRewards.stream().filter(r -> !r.attraction.attractionName.equals(userReward.attraction)).count() == 0) {
-			userRewards.add(userReward);
+		if (this.userRewards.stream()
+				.noneMatch(r -> r.attraction.attractionName.equals(userReward.attraction.attractionName))) {
+			this.userRewards.add(userReward);
 		}
 	}
 

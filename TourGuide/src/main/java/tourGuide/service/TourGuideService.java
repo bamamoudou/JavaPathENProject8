@@ -1,5 +1,7 @@
 package tourGuide.service;
 
+import java.io.IOException;
+import java.text.ParseException;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.util.ArrayList;
@@ -16,34 +18,43 @@ import java.util.concurrent.ExecutorService;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+import org.json.JSONException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import gpsUtil.GpsUtil;
-import gpsUtil.location.Attraction;
-import gpsUtil.location.Location;
-import gpsUtil.location.VisitedLocation;
 import tourGuide.helper.InternalTestHelper;
+import tourGuide.model.Attraction;
+import tourGuide.model.Location;
+import tourGuide.model.Provider;
+import tourGuide.model.User;
+import tourGuide.model.UserReward;
+import tourGuide.model.VisitedLocation;
 import tourGuide.tracker.Tracker;
-import tourGuide.user.User;
-import tourGuide.user.UserReward;
-import tripPricer.Provider;
-import tripPricer.TripPricer;
 
 @Service
 public class TourGuideService {
 	private Logger logger = LoggerFactory.getLogger(TourGuideService.class);
-	private final GpsUtil gpsUtil;
+	private final GpsUtilService gpsUtilService;
 	private final RewardsService rewardsService;
-	private final TripPricer tripPricer = new TripPricer();
+	private final TripPricerService tripPricerService;
 	public final Tracker tracker;
 	boolean testMode = true;
 	private ExecutorService executorService;
 
-	public TourGuideService(GpsUtil gpsUtil, RewardsService rewardsService, ExecutorService executorService) {
-		this.gpsUtil = gpsUtil;
+	/**
+	 * Constructor
+	 * 
+	 * @param gpsUtilService
+	 * @param rewardsService
+	 * @param tripPricerService
+	 * @param executorService
+	 */
+	public TourGuideService(GpsUtilService gpsUtilService, RewardsService rewardsService,
+			TripPricerService tripPricerService, ExecutorService executorService) {
+		this.gpsUtilService = gpsUtilService;
 		this.rewardsService = rewardsService;
+		this.tripPricerService = tripPricerService;
 		this.executorService = executorService;
 		if (testMode) {
 			logger.info("TestMode enabled");
@@ -65,38 +76,87 @@ public class TourGuideService {
 		return visitedLocation;
 	}
 
+	/**
+	 * Get user by usernmae
+	 * 
+	 * @param userName
+	 * @return
+	 */
 	public User getUser(String userName) {
 		return internalUserMap.get(userName);
 	}
 
+	/**
+	 * Get All users
+	 * 
+	 * @return
+	 */
 	public List<User> getAllUsers() {
 		return new ArrayList<>(internalUserMap.values());
 	}
 
+	/**
+	 * Add User to the list
+	 */
 	public void addUser(User user) {
 		if (!internalUserMap.containsKey(user.getUserName())) {
 			internalUserMap.put(user.getUserName(), user);
 		}
 	}
 
-	public List<Provider> getTripDeals(User user) {
+	/**
+	 * Get Trip Deal
+	 * 
+	 * @param user
+	 * @return
+	 * @throws IOException
+	 * @throws JSONException
+	 */
+	public List<Provider> getTripDeals(User user) throws IOException, JSONException {
 		int cumulatativeRewardPoints = user.getUserRewards().stream().mapToInt(i -> i.getRewardPoints()).sum();
-		List<Provider> providers = tripPricer.getPrice(tripPricerApiKey, user.getUserId(),
+		List<Provider> providers = tripPricerService.getPrice(tripPricerApiKey, user.getUserId(),
 				user.getUserPreferences().getNumberOfAdults(), user.getUserPreferences().getNumberOfChildren(),
 				user.getUserPreferences().getTripDuration(), cumulatativeRewardPoints);
 		user.setTripDeals(providers);
 		return providers;
 	}
 
+	/**
+	 * Track User location asynchronously, get user location and calculate reward
+	 * 
+	 * @param user
+	 * @return
+	 */
 	public CompletableFuture<VisitedLocation> trackUserLocation(User user) {
 		return CompletableFuture.supplyAsync(() -> {
-			VisitedLocation visitedLocation = gpsUtil.getUserLocation(user.getUserId());
+			VisitedLocation visitedLocation = null;
+			try {
+				visitedLocation = gpsUtilService.getUserLocation(user.getUserId());
+			} catch (IOException e) {
+				e.printStackTrace();
+			} catch (JSONException e) {
+				e.printStackTrace();
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
 			user.addToVisitedLocations(visitedLocation);
-			rewardsService.calculateRewards(user);
+			try {
+				rewardsService.calculateRewards(user);
+			} catch (IOException e) {
+				e.printStackTrace();
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
 			return visitedLocation;
 		}, executorService);
 	}
 
+	/**
+	 * Track Users location asynchronously, get users location and calculate reward
+	 * 
+	 * @param usersList
+	 * @return
+	 */
 	public CompletableFuture<List<VisitedLocation>> getLocationsFromUserList(List<User> usersList) {
 		List<CompletableFuture<VisitedLocation>> allVisitedLocationFutures = usersList.stream()
 				.map(this::trackUserLocation).collect(Collectors.toList());
@@ -108,11 +168,19 @@ public class TourGuideService {
 				v -> allVisitedLocationFutures.stream().map(CompletableFuture::join).collect(Collectors.toList()));
 	}
 
-	public List<Attraction> getNearbyAttractions(VisitedLocation visitedLocation) {
+	/**
+	 * Get 5 nearest attraction of a location
+	 * 
+	 * @param visitedLocation
+	 * @return list attractions
+	 * @throws IOException
+	 * @throws JSONException
+	 */
+	public List<Attraction> getNearbyAttractions(VisitedLocation visitedLocation) throws IOException, JSONException {
 		List<Attraction> nearbyAttractions = new ArrayList<>();
 		Map<Double, Attraction> attractionMap = new HashMap<>();
 
-		gpsUtil.getAttractions().stream()
+		gpsUtilService.getAttractions().stream()
 				.forEach(a -> attractionMap.put(rewardsService.getDistance(a, visitedLocation.location), a));
 
 		int i = 5;
@@ -127,7 +195,18 @@ public class TourGuideService {
 		return nearbyAttractions;
 	}
 
-	public String getFiveClosestAttractionJSON(User user) throws ExecutionException, InterruptedException {
+	/**
+	 * Get 5 nearest attraction of a location and construct JSON response
+	 * 
+	 * @param user
+	 * @return
+	 * @throws ExecutionException
+	 * @throws InterruptedException
+	 * @throws IOException
+	 * @throws JSONException
+	 */
+	public String getFiveClosestAttractionJSON(User user)
+			throws ExecutionException, InterruptedException, IOException, JSONException {
 		VisitedLocation userLocation = getUserLocation(user);
 		List<Attraction> closestAttractionsLists = getNearbyAttractions(userLocation);
 		StringBuffer result = new StringBuffer();
@@ -144,7 +223,13 @@ public class TourGuideService {
 					res.append("\"city\" : \"").append(a.city).append("\",");
 					res.append("\"state\" : \"").append(a.state).append("\",");
 					res.append("\"distance\" : ").append(rewardsService.getDistance(userLocation.location, a)).append(",");
-					res.append("\"reward\" : ").append(rewardsService.getRewardPoints(a, user)).append("}");
+					try {
+						res.append("\"reward\" : ").append(rewardsService.getRewardPoints(a, user)).append("}");
+					} catch (IOException e) {
+						e.printStackTrace();
+					} catch (JSONException e) {
+						e.printStackTrace();
+					}
 					return res.toString();
 				}, executorService)).collect(Collectors.toList());
 
@@ -167,12 +252,22 @@ public class TourGuideService {
 		});
 	}
 
+	/**
+	 * Return all users LastVisitedLocation
+	 * 
+	 * @return list of locations
+	 */
 	public List<VisitedLocation> getAllUsersLocations() {
 		List<VisitedLocation> usersLocationsList = new ArrayList<>();
 		this.getAllUsers().stream().forEach(u -> usersLocationsList.add(u.getLastVisitedLocation()));
 		return usersLocationsList;
 	}
 
+	/**
+	 * Return all users LastVisitedLocation and construct JSON response
+	 * 
+	 * @return JSON response
+	 */
 	public String getAllUsersLocationsJSON() {
 		List<VisitedLocation> allUsersLocations = getAllUsersLocations();
 		StringBuffer result = new StringBuffer();
