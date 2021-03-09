@@ -1,25 +1,45 @@
-tourGuide/user/UserPreferences.java
- tourGuide.user.UserPreferences
-tourGuide/user/User.java
- tourGuide.user.User
-tourGuide/user/UserReward.java
- tourGuide.user.UserReward
-tourGuide/model/AttractionDistance.java
- tourGuide.model.AttractionDistance
-tourGuide/helper/InternalTestHelper.java
- tourGuide.helper.InternalTestHelper
-tourGuide/Application.java
- tourGuide.Application
-tourGuide/model/AttractionNearby.java
- tourGuide.model.AttractionNearby
+tourGuide/actuator/HealthCheck.java
+ tourGuide.actuator.HealthCheck
+tourGuide/service/TripPricerService.java
+ tourGuide.service.TripPricerService
 tourGuide/service/RewardsService.java
  tourGuide.service.RewardsService
+tourGuide/service/HTTPRequestService.java
+ tourGuide.service.HTTPRequestService
+tourGuide/actuator/HttpTraceActuatorConfiguration.java
+ tourGuide.actuator.HttpTraceActuatorConfiguration
+tourGuide/helper/InternalTestHelper.java
+ tourGuide.helper.InternalTestHelper
+tourGuide/service/GpsUtilService.java
+ tourGuide.service.GpsUtilService
 tourGuide/service/TourGuideService.java
  tourGuide.service.TourGuideService
  tourGuide.service.TourGuideService$1
+tourGuide/model/UserReward.java
+ tourGuide.model.UserReward
+tourGuide/service/RewardCentralService.java
+ tourGuide.service.RewardCentralService
+tourGuide/TourGuideController.java
+ tourGuide.TourGuideController
+tourGuide/service/ApiService.java
+ tourGuide.service.ApiService
+tourGuide/model/User.java
+ tourGuide.model.User
+tourGuide/model/VisitedLocation.java
+ tourGuide.model.VisitedLocation
+tourGuide/model/TripPricer.java
+ tourGuide.model.TripPricer
+tourGuide/Application.java
+ tourGuide.Application
+tourGuide/model/UserPreferences.java
+ tourGuide.model.UserPreferences
+tourGuide/model/Attraction.java
+ tourGuide.model.Attraction
+tourGuide/model/Provider.java
+ tourGuide.model.Provider
 tourGuide/tracker/Tracker.java
  tourGuide.tracker.Tracker
 tourGuide/TourGuideModule.java
  tourGuide.TourGuideModule
-tourGuide/TourGuideController.java
- tourGuide.TourGuideController
+tourGuide/model/Location.java
+ tourGuide.model.Location

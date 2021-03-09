@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.382s</div>
+<div class="counter">0.461s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,27 +79,27 @@
 </thead>
 <tr>
 <td class="success">getAllCurrentLocationsTest</td>
-<td class="success">0.212s</td>
+<td class="success">0.268s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">getIndexTest</td>
-<td class="success">0.024s</td>
+<td class="success">0.027s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">getNearbyAttractionsTest</td>
-<td class="success">0.045s</td>
+<td class="success">0.048s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">getRewardsTest</td>
-<td class="success">0.087s</td>
+<td class="success">0.105s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">getTripDealsTest</td>
-<td class="success">0.014s</td>
+<td class="success">0.013s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -107,9 +107,27 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2021-03-09 15:23:46.427  INFO 22064 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [tourGuide.TestTourGuideController]: no resource found for suffixes {-context.xml, Context.groovy}.
-2021-03-09 15:23:46.486  INFO 22064 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-2021-03-09 15:23:46.490  INFO 22064 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@3e93e29, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@df3df2c, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@283f32ce, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@1d1fd155, org.springframework.test.context.support.DirtiesContextTestExecutionListener@57cdaca9, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@44d413c3, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@152cf0d5, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@76da1e5c, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@4c485cca, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@28e6148b]
+<pre>20:20:53.034 [Test worker] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class tourGuide.TestTourGuideController]
+20:20:53.040 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+20:20:53.072 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+20:20:53.141 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [tourGuide.TestTourGuideController] from class [org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper]
+20:20:53.224 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [tourGuide.TestTourGuideController]: class path resource [tourGuide/TestTourGuideController-context.xml] does not exist
+20:20:53.225 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [tourGuide.TestTourGuideController]: class path resource [tourGuide/TestTourGuideControllerContext.groovy] does not exist
+20:20:53.225 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [tourGuide.TestTourGuideController]: no resource found for suffixes {-context.xml, Context.groovy}.
+20:20:53.462 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [tourGuide.TestTourGuideController]
+20:20:53.479 [Test worker] DEBUG org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - @TestExecutionListeners is not present for class [tourGuide.TestTourGuideController]: using defaults.
+20:20:53.480 [Test worker] INFO org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+20:20:53.527 [Test worker] DEBUG org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttributeSource]
+20:20:53.531 [Test worker] DEBUG org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+20:20:53.532 [Test worker] INFO org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5c2a3e22, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5a784725, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@1a8b36f9, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6e2f367e, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6379deb7, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@7ba0fc92, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@38df21e1, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@2fd46c42, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@2f58369, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@7e4dbbc9]
+20:20:53.538 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [tourGuide.TestTourGuideController]
+20:20:53.540 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [tourGuide.TestTourGuideController]
+20:20:53.541 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [tourGuide.TestTourGuideController]
+20:20:53.542 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [tourGuide.TestTourGuideController]
+20:20:53.558 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@44e2186 testClass = TestTourGuideController, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@379f056 testClass = TestTourGuideController, locations = '{}', classes = '{class tourGuide.TourGuideModule}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@6643007b, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@f0cef1f5, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@f2e50225, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@32d97e6, [ImportsContextCustomizer@7f63e197 key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.context.MessageSourceAutoConfiguration, org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration, org.springframework.boot.autoconfigure.freemarker.FreeMarkerAutoConfiguration, org.springframework.boot.autoconfigure.groovy.template.GroovyTemplateAutoConfiguration, org.springframework.boot.autoconfigure.gson.GsonAutoConfiguration, org.springframework.boot.autoconfigure.hateoas.HypermediaAutoConfiguration, org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration, org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration, org.springframework.boot.autoconfigure.jsonb.JsonbAutoConfiguration, org.springframework.boot.autoconfigure.mustache.MustacheAutoConfiguration, org.springframework.boot.autoconfigure.task.TaskExecutionAutoConfiguration, org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration, org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@7a8bcfca, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@5926c980, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@6dec597b], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null].
+20:20:53.559 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [tourGuide.TestTourGuideController]
+20:20:53.559 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [tourGuide.TestTourGuideController]
+20:20:54.036 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper=true, server.port=-1}
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -119,27 +137,36 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v2.1.6.RELEASE)
 
-2021-03-09 15:23:46.594  INFO 22064 --- [    Test worker] tourGuide.TestTourGuideController        : Starting TestTourGuideController on DESKTOP-1N3M7NR with PID 22064 (started by adoba in C:\Users\adoba\eclipse-workspace\JavaPathENProject8\TourGuide)
-2021-03-09 15:23:46.598  INFO 22064 --- [    Test worker] tourGuide.TestTourGuideController        : No active profile set, falling back to default profiles: default
-2021-03-09 15:23:49.674  INFO 22064 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2021-03-09 15:23:49.676  INFO 22064 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2021-03-09 15:23:49.710  INFO 22064 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 34 ms
-2021-03-09 15:23:49.766  INFO 22064 --- [    Test worker] tourGuide.TestTourGuideController        : Started TestTourGuideController in 3.267 seconds (JVM running for 962.241)
-2021-03-09 15:23:49.779  INFO 22064 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2021-03-09 15:23:49.781  INFO 22064 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2021-03-09 15:23:49.786  INFO 22064 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 5 ms
-2021-03-09 15:23:49.993  INFO 22064 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2021-03-09 15:23:49.997  INFO 22064 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2021-03-09 15:23:50.004  INFO 22064 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 6 ms
-2021-03-09 15:23:50.019  INFO 22064 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2021-03-09 15:23:50.019  INFO 22064 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2021-03-09 15:23:50.023  INFO 22064 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
-2021-03-09 15:23:50.066  INFO 22064 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2021-03-09 15:23:50.067  INFO 22064 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2021-03-09 15:23:50.071  INFO 22064 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
-2021-03-09 15:23:50.157  INFO 22064 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2021-03-09 15:23:50.158  INFO 22064 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2021-03-09 15:23:50.162  INFO 22064 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 4 ms
+2021-03-09 20:20:55.698  WARN 15212 --- [    Test worker] ory$DuplicateJsonObjectContextCustomizer : 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/adoba/.gradle/caches/modules-2/files-2.1/org.json/json/20090211/c183aa3a2a6250293808bba12262c8920ce5a51c/json-20090211.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/adoba/.gradle/caches/modules-2/files-2.1/com.vaadin.external.google/android-json/0.0.20131108.vaadin1/fa26d351fe62a6a17f5cda1287c1c6110dec413f/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2021-03-09 20:20:55.772  INFO 15212 --- [    Test worker] tourGuide.TestTourGuideController        : Starting TestTourGuideController on DESKTOP-1N3M7NR with PID 15212 (started by adoba in C:\Users\adoba\eclipse-workspace\JavaPathENProject8\TourGuide)
+2021-03-09 20:20:55.804  INFO 15212 --- [    Test worker] tourGuide.TestTourGuideController        : No active profile set, falling back to default profiles: default
+2021-03-09 20:21:02.692  INFO 15212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 20:21:02.693  INFO 15212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 20:21:02.732  INFO 15212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 36 ms
+2021-03-09 20:21:02.823  INFO 15212 --- [    Test worker] tourGuide.TestTourGuideController        : Started TestTourGuideController in 8.754 seconds (JVM running for 32.63)
+2021-03-09 20:21:02.847  INFO 15212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 20:21:02.848  INFO 15212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 20:21:02.852  INFO 15212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2021-03-09 20:21:03.120  INFO 15212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 20:21:03.121  INFO 15212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 20:21:03.125  INFO 15212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2021-03-09 20:21:03.151  INFO 15212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 20:21:03.152  INFO 15212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 20:21:03.156  INFO 15212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2021-03-09 20:21:03.202  INFO 15212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 20:21:03.202  INFO 15212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 20:21:03.210  INFO 15212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 7 ms
+2021-03-09 20:21:03.308  INFO 15212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 20:21:03.308  INFO 15212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 20:21:03.312  INFO 15212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
 </pre>
 </span>
 </div>
@@ -151,7 +178,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 6.6.1</a> at 9 mars 2021 15:23:51</p>
+<a href="http://www.gradle.org">Gradle 6.6.1</a> at 9 mars 2021 20:21:03</p>
 </div>
 </div>
 </body>

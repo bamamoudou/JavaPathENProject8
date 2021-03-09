@@ -1,24 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="tourGuide.services.TestTourGuideService" tests="9" skipped="0" failures="0" errors="0" timestamp="2021-03-09T14:08:43" hostname="DESKTOP-1N3M7NR" time="1.254">
+<testsuite name="tourGuide.services.TestTourGuideService" tests="9" skipped="0" failures="0" errors="0" timestamp="2021-03-09T19:20:47" hostname="DESKTOP-1N3M7NR" time="1.569">
   <properties/>
-  <testcase name="getUserLocation" classname="tourGuide.services.TestTourGuideService" time="0.064"/>
-  <testcase name="addUser" classname="tourGuide.services.TestTourGuideService" time="0.005"/>
-  <testcase name="getTripDeals" classname="tourGuide.services.TestTourGuideService" time="0.045"/>
+  <testcase name="getUserLocation" classname="tourGuide.services.TestTourGuideService" time="0.101"/>
+  <testcase name="addUser" classname="tourGuide.services.TestTourGuideService" time="0.002"/>
+  <testcase name="getTripDeals" classname="tourGuide.services.TestTourGuideService" time="0.047"/>
   <testcase name="getAllUsers" classname="tourGuide.services.TestTourGuideService" time="0.002"/>
-  <testcase name="getAllUsersLocationsJSON" classname="tourGuide.services.TestTourGuideService" time="0.053"/>
-  <testcase name="getFiveClosestAttractionJSON" classname="tourGuide.services.TestTourGuideService" time="0.875"/>
-  <testcase name="trackUser" classname="tourGuide.services.TestTourGuideService" time="0.093"/>
-  <testcase name="getNearbyAttractions" classname="tourGuide.services.TestTourGuideService" time="0.091"/>
-  <testcase name="getAllUsersLocations" classname="tourGuide.services.TestTourGuideService" time="0.02"/>
-  <system-out><![CDATA[2021-03-09 15:08:43.838  INFO 22064 --- [    Test worker] tourGuide.service.TourGuideService       : TestMode enabled
-2021-03-09 15:08:43.905  INFO 22064 --- [    Test worker] tourGuide.service.TourGuideService       : TestMode enabled
-2021-03-09 15:08:43.910  INFO 22064 --- [    Test worker] tourGuide.service.TourGuideService       : TestMode enabled
-2021-03-09 15:08:43.956  INFO 22064 --- [    Test worker] tourGuide.service.TourGuideService       : TestMode enabled
-2021-03-09 15:08:43.958  INFO 22064 --- [    Test worker] tourGuide.service.TourGuideService       : TestMode enabled
-2021-03-09 15:08:44.011  INFO 22064 --- [    Test worker] tourGuide.service.TourGuideService       : TestMode enabled
-2021-03-09 15:08:44.886  INFO 22064 --- [    Test worker] tourGuide.service.TourGuideService       : TestMode enabled
-2021-03-09 15:08:44.979  INFO 22064 --- [    Test worker] tourGuide.service.TourGuideService       : TestMode enabled
-2021-03-09 15:08:45.072  INFO 22064 --- [    Test worker] tourGuide.service.TourGuideService       : TestMode enabled
+  <testcase name="getAllUsersLocationsJSON" classname="tourGuide.services.TestTourGuideService" time="0.055"/>
+  <testcase name="getFiveClosestAttractionJSON" classname="tourGuide.services.TestTourGuideService" time="1.134"/>
+  <testcase name="trackUser" classname="tourGuide.services.TestTourGuideService" time="0.099"/>
+  <testcase name="getNearbyAttractions" classname="tourGuide.services.TestTourGuideService" time="0.109"/>
+  <testcase name="getAllUsersLocations" classname="tourGuide.services.TestTourGuideService" time="0.017"/>
+  <system-out><![CDATA[20:20:47.928 [Test worker] INFO tourGuide.service.TourGuideService - TestMode enabled
+20:20:47.928 [Test worker] DEBUG tourGuide.service.TourGuideService - Initializing users
+20:20:47.928 [Test worker] DEBUG tourGuide.service.TourGuideService - Created 0 internal test users.
+20:20:47.928 [Test worker] DEBUG tourGuide.service.TourGuideService - Finished initializing users
+20:20:47.930 [pool-8-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 0 users.
+20:20:47.931 [pool-8-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:20:47.932 [pool-8-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:20:48.029 [Test worker] INFO tourGuide.service.TourGuideService - TestMode enabled
+20:20:48.029 [Test worker] DEBUG tourGuide.service.TourGuideService - Initializing users
+20:20:48.030 [Test worker] DEBUG tourGuide.service.TourGuideService - Created 0 internal test users.
+20:20:48.030 [Test worker] DEBUG tourGuide.service.TourGuideService - Finished initializing users
+20:20:48.031 [Test worker] INFO tourGuide.service.TourGuideService - TestMode enabled
+20:20:48.031 [Test worker] DEBUG tourGuide.service.TourGuideService - Initializing users
+20:20:48.031 [Test worker] DEBUG tourGuide.service.TourGuideService - Created 0 internal test users.
+20:20:48.032 [Test worker] DEBUG tourGuide.service.TourGuideService - Finished initializing users
+20:20:48.033 [pool-10-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker stopping
+20:20:48.034 [pool-12-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 0 users.
+20:20:48.034 [pool-12-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:20:48.034 [pool-12-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:20:48.078 [Test worker] INFO tourGuide.service.TourGuideService - TestMode enabled
+20:20:48.078 [Test worker] DEBUG tourGuide.service.TourGuideService - Initializing users
+20:20:48.079 [Test worker] DEBUG tourGuide.service.TourGuideService - Created 0 internal test users.
+20:20:48.079 [Test worker] DEBUG tourGuide.service.TourGuideService - Finished initializing users
+20:20:48.081 [Test worker] INFO tourGuide.service.TourGuideService - TestMode enabled
+20:20:48.081 [Test worker] DEBUG tourGuide.service.TourGuideService - Initializing users
+20:20:48.082 [pool-14-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker stopping
+20:20:48.105 [Test worker] DEBUG tourGuide.service.TourGuideService - Created 100 internal test users.
+20:20:48.105 [Test worker] DEBUG tourGuide.service.TourGuideService - Finished initializing users
+20:20:48.108 [pool-16-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 100 users.
+20:20:48.136 [Test worker] INFO tourGuide.service.TourGuideService - TestMode enabled
+20:20:48.136 [Test worker] DEBUG tourGuide.service.TourGuideService - Initializing users
+20:20:48.136 [Test worker] DEBUG tourGuide.service.TourGuideService - Created 1 internal test users.
+20:20:48.137 [Test worker] DEBUG tourGuide.service.TourGuideService - Finished initializing users
+20:20:48.200 [pool-18-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 1 users.
+20:20:48.203 [pool-18-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:20:48.203 [pool-18-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:20:49.270 [Test worker] INFO tourGuide.service.TourGuideService - TestMode enabled
+20:20:49.271 [Test worker] DEBUG tourGuide.service.TourGuideService - Initializing users
+20:20:49.271 [Test worker] DEBUG tourGuide.service.TourGuideService - Created 0 internal test users.
+20:20:49.271 [Test worker] DEBUG tourGuide.service.TourGuideService - Finished initializing users
+20:20:49.273 [pool-20-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 0 users.
+20:20:49.274 [pool-20-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:20:49.275 [pool-20-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:20:49.370 [Test worker] INFO tourGuide.service.TourGuideService - TestMode enabled
+20:20:49.371 [Test worker] DEBUG tourGuide.service.TourGuideService - Initializing users
+20:20:49.371 [Test worker] DEBUG tourGuide.service.TourGuideService - Created 0 internal test users.
+20:20:49.371 [Test worker] DEBUG tourGuide.service.TourGuideService - Finished initializing users
+20:20:49.372 [pool-22-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 0 users.
+20:20:49.372 [pool-22-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:20:49.373 [pool-22-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:20:49.480 [Test worker] INFO tourGuide.service.TourGuideService - TestMode enabled
+20:20:49.480 [Test worker] DEBUG tourGuide.service.TourGuideService - Initializing users
+20:20:49.495 [Test worker] DEBUG tourGuide.service.TourGuideService - Created 100 internal test users.
+20:20:49.495 [Test worker] DEBUG tourGuide.service.TourGuideService - Finished initializing users
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

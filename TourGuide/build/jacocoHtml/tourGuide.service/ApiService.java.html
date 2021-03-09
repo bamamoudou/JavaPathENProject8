@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ApiService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">TourGuide</a> &gt; <a href="index.source.html" class="el_package">tourGuide.service</a> &gt; <span class="el_source">ApiService.java</span></div><h1>ApiService.java</h1><pre class="source lang-java linenums">package tourGuide.service;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+public class ApiService {
+	/**
+	 * Logger log4j2
+	 */
+<span class="fc" id="L16">	private static final Logger logger = LogManager.getLogger(&quot;ApiService&quot;);</span>
+
+	/**
+	 * HttpRequestService
+	 */
+	public HTTPRequestService httpRequestService;
+
+	/**
+	 * Configuration File
+	 */
+	private String configurationFilePath;
+
+	/**
+	 * Constructor
+	 * 
+	 * @param httpRequestService
+	 * @param configurationFilePath
+	 */
+<span class="fc" id="L34">	public ApiService(HTTPRequestService httpRequestService, String configurationFilePath) {</span>
+<span class="fc" id="L35">		this.httpRequestService = httpRequestService;</span>
+<span class="fc" id="L36">		this.configurationFilePath = configurationFilePath;</span>
+<span class="fc" id="L37">	}</span>
+
+	/**
+	 * Get host server URL from properties file
+	 * 
+	 * @param param
+	 * @return
+	 */
+	public String getApiServerUrl(String param) {
+<span class="fc" id="L46">		String serverUrl = &quot;&quot;;</span>
+<span class="fc" id="L47">		try (InputStream inputStream = new FileInputStream(configurationFilePath)) {</span>
+<span class="fc" id="L48">			Properties properties = new Properties();</span>
+<span class="fc" id="L49">			properties.load(inputStream);</span>
+<span class="fc" id="L50">			serverUrl = properties.getProperty(param);</span>
+<span class="nc" id="L51">		} catch (FileNotFoundException e) {</span>
+<span class="nc" id="L52">			logger.error(&quot;File not found&quot;, e);</span>
+<span class="nc" id="L53">		} catch (IOException e) {</span>
+<span class="nc" id="L54">			logger.error(&quot;Error while read file&quot;, e);</span>
+<span class="pc" id="L55">		}</span>
+<span class="fc" id="L56">		return serverUrl;</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

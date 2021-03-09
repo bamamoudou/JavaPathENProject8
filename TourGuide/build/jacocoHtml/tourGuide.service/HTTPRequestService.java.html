@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>HTTPRequestService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">TourGuide</a> &gt; <a href="index.source.html" class="el_package">tourGuide.service</a> &gt; <span class="el_source">HTTPRequestService.java</span></div><h1>HTTPRequestService.java</h1><pre class="source lang-java linenums">package tourGuide.service;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import java.util.Map;
+import java.util.StringJoiner;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+public class HTTPRequestService {
+	/**
+	 * Constructor
+	 */
+<span class="fc" id="L22">	public HTTPRequestService() {</span>
+<span class="fc" id="L23">	}</span>
+
+	/**
+	 * Api GET request
+	 * 
+	 * @param url
+	 * @param urlParams
+	 * @return JSON api response
+	 * @throws IOException
+	 * @throws JSONException
+	 */
+	public JSONObject getReq(String url, Map&lt;String, String&gt; urlParams) throws IOException, JSONException {
+<span class="fc" id="L35">		StringBuilder urlWithParams = new StringBuilder();</span>
+<span class="fc" id="L36">		urlWithParams.append(url).append(this.getURLParamsString(urlParams));</span>
+<span class="fc" id="L37">		URL reqUrl = new URL(urlWithParams.toString());</span>
+<span class="fc" id="L38">		HttpURLConnection con = (HttpURLConnection) reqUrl.openConnection();</span>
+<span class="fc" id="L39">		con.setRequestMethod(&quot;GET&quot;);</span>
+<span class="fc" id="L40">		con.setDoOutput(true);</span>
+<span class="fc" id="L41">		con.setRequestProperty(&quot;Content-Type&quot;, &quot;application/json&quot;);</span>
+<span class="fc" id="L42">		con.setConnectTimeout(20000);</span>
+<span class="fc" id="L43">		con.setReadTimeout(20000);</span>
+<span class="fc" id="L44">		String res = this.getResponse(con);</span>
+<span class="fc" id="L45">		con.disconnect();</span>
+<span class="fc" id="L46">		return new JSONObject(res);</span>
+	}
+
+	/**
+	 * Api POST request with a form
+	 * 
+	 * @param url
+	 * @param formParams
+	 * @return JSON api response
+	 * @throws IOException
+	 * @throws JSONException
+	 */
+	public JSONObject postFormReq(String url, Map&lt;String, String&gt; formParams) throws IOException, JSONException {
+<span class="fc" id="L59">		StringJoiner sj = new StringJoiner(&quot;&amp;&quot;);</span>
+<span class="fc bfc" id="L60" title="All 2 branches covered.">		for (Map.Entry&lt;String, String&gt; entry : formParams.entrySet())</span>
+<span class="fc" id="L61">			sj.add(URLEncoder.encode(entry.getKey(), &quot;UTF-8&quot;) + &quot;=&quot; + URLEncoder.encode(entry.getValue(), &quot;UTF-8&quot;));</span>
+<span class="fc" id="L62">		byte[] out = sj.toString().getBytes(StandardCharsets.UTF_8);</span>
+
+<span class="fc" id="L64">		URL reqUrl = new URL(url);</span>
+<span class="fc" id="L65">		HttpURLConnection con = (HttpURLConnection) reqUrl.openConnection();</span>
+<span class="fc" id="L66">		con.setRequestMethod(&quot;POST&quot;);</span>
+<span class="fc" id="L67">		con.setDoOutput(true);</span>
+<span class="fc" id="L68">		con.setConnectTimeout(20000);</span>
+<span class="fc" id="L69">		con.setReadTimeout(20000);</span>
+<span class="fc" id="L70">		con.setFixedLengthStreamingMode(out.length);</span>
+<span class="fc" id="L71">		con.setRequestProperty(&quot;Content-Type&quot;, &quot;application/x-www-form-urlencoded; charset=UTF-8&quot;);</span>
+<span class="fc" id="L72">		con.connect();</span>
+<span class="fc" id="L73">		try (OutputStream os = con.getOutputStream()) {</span>
+<span class="fc" id="L74">			os.write(out);</span>
+		}
+<span class="fc" id="L76">		String res = this.getResponse(con);</span>
+<span class="fc" id="L77">		con.disconnect();</span>
+<span class="fc" id="L78">		return new JSONObject(res);</span>
+	}
+
+	/**
+	 * Set URL parameters
+	 * 
+	 * @param params
+	 * @return URL parameters
+	 * @throws UnsupportedEncodingException
+	 */
+	private static String getURLParamsString(Map&lt;String, String&gt; params) throws UnsupportedEncodingException {
+<span class="fc" id="L89">		StringBuilder result = new StringBuilder();</span>
+
+<span class="pc bpc" id="L91" title="1 of 4 branches missed.">		if (params != null &amp;&amp; params.size() &gt;= 1) {</span>
+<span class="fc" id="L92">			result.append(&quot;?&quot;);</span>
+<span class="fc bfc" id="L93" title="All 2 branches covered.">			for (Map.Entry&lt;String, String&gt; entry : params.entrySet()) {</span>
+<span class="fc" id="L94">				result.append(URLEncoder.encode(entry.getKey(), &quot;UTF-8&quot;));</span>
+<span class="fc" id="L95">				result.append(&quot;=&quot;);</span>
+<span class="fc" id="L96">				result.append(URLEncoder.encode(entry.getValue(), &quot;UTF-8&quot;));</span>
+<span class="fc" id="L97">				result.append(&quot;&amp;&quot;);</span>
+<span class="fc" id="L98">			}</span>
+		}
+
+<span class="fc" id="L101">		String resultString = result.toString();</span>
+<span class="fc bfc" id="L102" title="All 2 branches covered.">		return resultString.length() &gt; 0 ? resultString.substring(0, resultString.length() - 1) : resultString;</span>
+	}
+
+	/**
+	 * Parse request response into JSON
+	 * 
+	 * @param con
+	 * @return JSON
+	 * @throws IOException
+	 */
+	private static String getResponse(HttpURLConnection con) throws IOException {
+<span class="fc" id="L113">		StringBuilder res = new StringBuilder();</span>
+<span class="fc" id="L114">		res.append(&quot;{&quot;);</span>
+<span class="fc" id="L115">		res.append(&quot;\&quot;status\&quot; :&quot;).append(&quot;\&quot;&quot;).append(con.getResponseCode()).append(&quot;\&quot;,&quot;);</span>
+<span class="fc" id="L116">		res.append(&quot;\&quot;message\&quot; :&quot;).append(&quot;\&quot;&quot;).append(con.getResponseMessage()).append(&quot;\&quot;,&quot;);</span>
+<span class="fc" id="L117">		res.append(&quot;\&quot;content\&quot; :&quot;);</span>
+<span class="fc" id="L118">		try (BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()))) {</span>
+			String inputLine;
+<span class="fc bfc" id="L120" title="All 2 branches covered.">			while ((inputLine = in.readLine()) != null) {</span>
+<span class="fc" id="L121">				res.append(inputLine);</span>
+			}
+<span class="nc" id="L123">		} catch (Exception e) {</span>
+<span class="nc" id="L124">			e.printStackTrace();</span>
+<span class="fc" id="L125">		}</span>
+<span class="fc" id="L126">		res.append(&quot;}&quot;);</span>
+
+<span class="fc" id="L128">		return res.toString();</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

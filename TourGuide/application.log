@@ -478,3 +478,100 @@
 2021-03-09 15:23:50.157  INFO 22064 --- [Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
 2021-03-09 15:23:50.158  INFO 22064 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
 2021-03-09 15:23:50.162  INFO 22064 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 4 ms
+2021-03-09 20:15:38.813  WARN 16400 --- [main] ory$DuplicateJsonObjectContextCustomizer : 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/adoba/.gradle/caches/modules-2/files-2.1/org.json/json/20090211/c183aa3a2a6250293808bba12262c8920ce5a51c/json-20090211.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/adoba/.gradle/caches/modules-2/files-2.1/com.vaadin.external.google/android-json/0.0.20131108.vaadin1/fa26d351fe62a6a17f5cda1287c1c6110dec413f/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2021-03-09 20:15:38.845  INFO 16400 --- [main] tourGuide.TestTourGuideController        : Starting TestTourGuideController on DESKTOP-1N3M7NR with PID 16400 (started by adoba in C:\Users\adoba\eclipse-workspace\JavaPathENProject8\TourGuide)
+2021-03-09 20:15:38.845  INFO 16400 --- [main] tourGuide.TestTourGuideController        : No active profile set, falling back to default profiles: default
+2021-03-09 20:15:43.432  INFO 16400 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 20:15:43.438  INFO 16400 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 20:15:43.456  INFO 16400 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 18 ms
+2021-03-09 20:15:43.548  INFO 16400 --- [main] tourGuide.TestTourGuideController        : Started TestTourGuideController in 5.436 seconds (JVM running for 22.804)
+2021-03-09 20:15:43.579  INFO 16400 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 20:15:43.579  INFO 16400 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 20:15:43.579  INFO 16400 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2021-03-09 20:15:43.826  INFO 16400 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 20:15:43.826  INFO 16400 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 20:15:43.833  INFO 16400 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 7 ms
+2021-03-09 20:15:43.848  INFO 16400 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 20:15:43.848  INFO 16400 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 20:15:43.848  INFO 16400 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2021-03-09 20:15:43.895  INFO 16400 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 20:15:43.895  INFO 16400 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 20:15:43.895  INFO 16400 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2021-03-09 20:15:43.964  INFO 16400 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 20:15:43.964  INFO 16400 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 20:15:43.964  INFO 16400 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2021-03-09 20:15:43.980  INFO 16400 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 20:15:43.980  INFO 16400 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 20:15:43.995  INFO 16400 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 15 ms
+2021-03-09 20:15:44.086  INFO 16400 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 20:15:46.073  INFO 16400 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 20:18:31.886  WARN 19744 --- [main] ory$DuplicateJsonObjectContextCustomizer : 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/adoba/.gradle/caches/modules-2/files-2.1/org.json/json/20090211/c183aa3a2a6250293808bba12262c8920ce5a51c/json-20090211.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/adoba/.gradle/caches/modules-2/files-2.1/com.vaadin.external.google/android-json/0.0.20131108.vaadin1/fa26d351fe62a6a17f5cda1287c1c6110dec413f/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2021-03-09 20:18:31.914  INFO 19744 --- [main] tourGuide.TestTourGuideController        : Starting TestTourGuideController on DESKTOP-1N3M7NR with PID 19744 (started by adoba in C:\Users\adoba\eclipse-workspace\JavaPathENProject8\TourGuide)
+2021-03-09 20:18:31.922  INFO 19744 --- [main] tourGuide.TestTourGuideController        : No active profile set, falling back to default profiles: default
+2021-03-09 20:18:37.364  INFO 19744 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 20:18:37.365  INFO 19744 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 20:18:37.410  INFO 19744 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 44 ms
+2021-03-09 20:18:37.604  INFO 19744 --- [main] tourGuide.TestTourGuideController        : Started TestTourGuideController in 6.681 seconds (JVM running for 24.624)
+2021-03-09 20:18:37.660  INFO 19744 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 20:18:37.661  INFO 19744 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 20:18:37.666  INFO 19744 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 4 ms
+2021-03-09 20:18:38.067  INFO 19744 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 20:18:38.068  INFO 19744 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 20:18:38.078  INFO 19744 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 6 ms
+2021-03-09 20:18:38.095  INFO 19744 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 20:18:38.095  INFO 19744 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 20:18:38.098  INFO 19744 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2021-03-09 20:18:38.170  INFO 19744 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 20:18:38.170  INFO 19744 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 20:18:38.174  INFO 19744 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 4 ms
+2021-03-09 20:18:38.350  INFO 19744 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 20:18:38.352  INFO 19744 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 20:18:38.355  INFO 19744 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2021-03-09 20:18:38.374  INFO 19744 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 20:18:40.515  INFO 19744 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 20:20:55.698  WARN 15212 --- [Test worker] ory$DuplicateJsonObjectContextCustomizer : 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/adoba/.gradle/caches/modules-2/files-2.1/org.json/json/20090211/c183aa3a2a6250293808bba12262c8920ce5a51c/json-20090211.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/adoba/.gradle/caches/modules-2/files-2.1/com.vaadin.external.google/android-json/0.0.20131108.vaadin1/fa26d351fe62a6a17f5cda1287c1c6110dec413f/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2021-03-09 20:20:55.772  INFO 15212 --- [Test worker] tourGuide.TestTourGuideController        : Starting TestTourGuideController on DESKTOP-1N3M7NR with PID 15212 (started by adoba in C:\Users\adoba\eclipse-workspace\JavaPathENProject8\TourGuide)
+2021-03-09 20:20:55.804  INFO 15212 --- [Test worker] tourGuide.TestTourGuideController        : No active profile set, falling back to default profiles: default
+2021-03-09 20:21:02.692  INFO 15212 --- [Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 20:21:02.693  INFO 15212 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 20:21:02.732  INFO 15212 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 36 ms
+2021-03-09 20:21:02.823  INFO 15212 --- [Test worker] tourGuide.TestTourGuideController        : Started TestTourGuideController in 8.754 seconds (JVM running for 32.63)
+2021-03-09 20:21:02.847  INFO 15212 --- [Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 20:21:02.848  INFO 15212 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 20:21:02.852  INFO 15212 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2021-03-09 20:21:03.120  INFO 15212 --- [Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 20:21:03.121  INFO 15212 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 20:21:03.125  INFO 15212 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2021-03-09 20:21:03.151  INFO 15212 --- [Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 20:21:03.152  INFO 15212 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 20:21:03.156  INFO 15212 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2021-03-09 20:21:03.202  INFO 15212 --- [Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 20:21:03.202  INFO 15212 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 20:21:03.210  INFO 15212 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 7 ms
+2021-03-09 20:21:03.308  INFO 15212 --- [Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 20:21:03.308  INFO 15212 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 20:21:03.312  INFO 15212 --- [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms

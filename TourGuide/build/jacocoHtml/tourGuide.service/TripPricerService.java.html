@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TripPricerService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">TourGuide</a> &gt; <a href="index.source.html" class="el_package">tourGuide.service</a> &gt; <span class="el_source">TripPricerService.java</span></div><h1>TripPricerService.java</h1><pre class="source lang-java linenums">package tourGuide.service;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import tourGuide.model.Provider;
+
+public class TripPricerService extends ApiService {
+	/**
+	 * Constructor
+	 * 
+	 * @param httpRequestService
+	 * @param configurationFilePath
+	 */
+	public TripPricerService(HTTPRequestService httpRequestService, String configurationFilePath) {
+<span class="fc" id="L24">		super(httpRequestService, configurationFilePath);</span>
+<span class="fc" id="L25">	}</span>
+
+	/**
+	 * Get user price plan from TripPricer API
+	 * 
+	 * @param apiKey
+	 * @param attractionId
+	 * @param adults
+	 * @param children
+	 * @param nightsStay
+	 * @param rewardsPoints
+	 * @return
+	 * @throws JSONException
+	 * @throws IOException
+	 */
+	public List&lt;Provider&gt; getPrice(String apiKey, UUID attractionId, int adults, int children, int nightsStay,
+			int rewardsPoints) throws JSONException, IOException {
+<span class="fc" id="L42">		List&lt;Provider&gt; result = null;</span>
+
+<span class="fc" id="L44">		Map&lt;String, String&gt; postParams = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L45">		postParams.put(&quot;apiKey&quot;, apiKey);</span>
+<span class="fc" id="L46">		postParams.put(&quot;attractionId&quot;, attractionId.toString());</span>
+<span class="fc" id="L47">		postParams.put(&quot;adults&quot;, String.valueOf(adults));</span>
+<span class="fc" id="L48">		postParams.put(&quot;children&quot;, String.valueOf(children));</span>
+<span class="fc" id="L49">		postParams.put(&quot;nightsStay&quot;, String.valueOf(nightsStay));</span>
+<span class="fc" id="L50">		postParams.put(&quot;rewardsPoints&quot;, String.valueOf(rewardsPoints));</span>
+
+<span class="fc" id="L52">		JSONObject data = super.httpRequestService.postFormReq(super.getApiServerUrl(&quot;trippricer.host&quot;) + &quot;/getPrice&quot;,</span>
+				postParams);
+<span class="pc bpc" id="L54" title="1 of 2 branches missed.">		if (data != null) {</span>
+<span class="fc" id="L55">			result = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L56">			Integer status = data.getInt(&quot;status&quot;);</span>
+<span class="pc bpc" id="L57" title="1 of 2 branches missed.">			if (status &lt; 299) {</span>
+<span class="fc" id="L58">				JSONArray content = (JSONArray) data.get(&quot;content&quot;);</span>
+<span class="fc bfc" id="L59" title="All 2 branches covered.">				for (int i = 0; i &lt; content.length(); i++) {</span>
+<span class="fc" id="L60">					JSONObject providerJson = content.getJSONObject(i);</span>
+<span class="fc" id="L61">					Provider provider = new Provider(UUID.fromString(providerJson.getString(&quot;tripId&quot;)),</span>
+<span class="fc" id="L62">							providerJson.getString(&quot;name&quot;), providerJson.getDouble(&quot;price&quot;));</span>
+<span class="fc" id="L63">					result.add(provider);</span>
+				}
+			}
+		}
+<span class="fc" id="L67">		return result;</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
