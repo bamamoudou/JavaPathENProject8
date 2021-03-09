@@ -48,54 +48,52 @@ public class RewardsService {
 <span class="fc bfc" id="L48" title="All 2 branches covered.">		for (VisitedLocation visitedLocation : userLocations) {</span>
 <span class="fc bfc" id="L49" title="All 2 branches covered.">			for (Attraction attraction : attractions) {</span>
 <span class="fc" id="L50">				if (user.getUserRewards().stream()</span>
-<span class="fc bfc" id="L51" title="All 2 branches covered.">						.filter(r -&gt; r.attraction.attractionName.equals(attraction.attractionName)).count() == 0) {</span>
-<span class="fc bfc" id="L52" title="All 2 branches covered.">					if (nearAttraction(visitedLocation, attraction)) {</span>
-<span class="fc" id="L53">						user.addUserReward(new UserReward(visitedLocation, attraction, getRewardPoints(attraction, user)));</span>
-					}
+<span class="fc bfc" id="L51" title="All 2 branches covered.">						.noneMatch(r -&gt; r.attraction.attractionName.equals(attraction.attractionName))</span>
+<span class="fc bfc" id="L52" title="All 2 branches covered.">						&amp;&amp; nearAttraction(visitedLocation, attraction)) {</span>
+<span class="fc" id="L53">					user.addUserReward(new UserReward(visitedLocation, attraction, getRewardPoints(attraction, user)));</span>
 				}
-<span class="fc" id="L56">			}</span>
-<span class="fc" id="L57">		}</span>
-<span class="fc" id="L58">	}</span>
+<span class="fc" id="L55">			}</span>
+<span class="fc" id="L56">		}</span>
+<span class="fc" id="L57">	}</span>
 
 	public CompletableFuture&lt;Void&gt; calculateRewardAsync(User user) {
-<span class="fc" id="L61">		return CompletableFuture.runAsync(() -&gt; this.calculateRewards(user), executorService);</span>
+<span class="fc" id="L60">		return CompletableFuture.runAsync(() -&gt; this.calculateRewards(user), this.executorService);</span>
 	}
 
 	public CompletableFuture&lt;List&lt;Void&gt;&gt; calculateUsersListReward(List&lt;User&gt; usersList) {
-<span class="fc" id="L65">		List&lt;CompletableFuture&lt;Void&gt;&gt; allCalculatedRewardFutures = usersList.stream().map(this::calculateRewardAsync)</span>
-<span class="fc" id="L66">				.collect(Collectors.toList());</span>
+<span class="fc" id="L64">		List&lt;CompletableFuture&lt;Void&gt;&gt; allCalculatedRewardFutures = usersList.stream().map(this::calculateRewardAsync)</span>
+<span class="fc" id="L65">				.collect(Collectors.toList());</span>
 
-<span class="fc" id="L68">		CompletableFuture&lt;Void&gt; allFutures = CompletableFuture</span>
-<span class="fc" id="L69">				.allOf(allCalculatedRewardFutures.toArray(new CompletableFuture[allCalculatedRewardFutures.size()]));</span>
+<span class="fc" id="L67">		CompletableFuture&lt;Void&gt; allFutures = CompletableFuture</span>
+<span class="fc" id="L68">				.allOf(allCalculatedRewardFutures.toArray(new CompletableFuture[allCalculatedRewardFutures.size()]));</span>
 
-<span class="fc" id="L71">		return allFutures.thenApply(</span>
-<span class="fc" id="L72">				v -&gt; allCalculatedRewardFutures.stream().map(CompletableFuture::join).collect(Collectors.toList()));</span>
+<span class="fc" id="L70">		return allFutures.thenApply(</span>
+<span class="fc" id="L71">				v -&gt; allCalculatedRewardFutures.stream().map(CompletableFuture::join).collect(Collectors.toList()));</span>
 	}
 
 	public boolean isWithinAttractionProximity(Attraction attraction, Location location) {
-<span class="pc bpc" id="L76" title="1 of 2 branches missed.">		return !(getDistance(attraction, location) &gt; attractionProximityRange);</span>
+<span class="pc bpc" id="L75" title="1 of 2 branches missed.">		return !(getDistance(attraction, location) &gt; attractionProximityRange);</span>
 	}
 
 	private boolean nearAttraction(VisitedLocation visitedLocation, Attraction attraction) {
-<span class="fc bfc" id="L80" title="All 2 branches covered.">		return !(getDistance(attraction, visitedLocation.location) &gt; proximityBuffer);</span>
+<span class="fc bfc" id="L79" title="All 2 branches covered.">		return !(getDistance(attraction, visitedLocation.location) &gt; proximityBuffer);</span>
 	}
 
-	private int getRewardPoints(Attraction attraction, User user) {
-<span class="fc" id="L84">		return rewardsCentral.getAttractionRewardPoints(attraction.attractionId, user.getUserId());</span>
+	public int getRewardPoints(Attraction attraction, User user) {
+<span class="fc" id="L83">		return rewardsCentral.getAttractionRewardPoints(attraction.attractionId, user.getUserId());</span>
 	}
 
 	public double getDistance(Location loc1, Location loc2) {
-<span class="fc" id="L88">		double lat1 = Math.toRadians(loc1.latitude);</span>
-<span class="fc" id="L89">		double lon1 = Math.toRadians(loc1.longitude);</span>
-<span class="fc" id="L90">		double lat2 = Math.toRadians(loc2.latitude);</span>
-<span class="fc" id="L91">		double lon2 = Math.toRadians(loc2.longitude);</span>
+<span class="fc" id="L87">		double lat1 = Math.toRadians(loc1.latitude);</span>
+<span class="fc" id="L88">		double lon1 = Math.toRadians(loc1.longitude);</span>
+<span class="fc" id="L89">		double lat2 = Math.toRadians(loc2.latitude);</span>
+<span class="fc" id="L90">		double lon2 = Math.toRadians(loc2.longitude);</span>
 
-<span class="fc" id="L93">		double angle = Math</span>
-<span class="fc" id="L94">				.acos(Math.sin(lat1) * Math.sin(lat2) + Math.cos(lat1) * Math.cos(lat2) * Math.cos(lon1 - lon2));</span>
+<span class="fc" id="L92">		double angle = Math</span>
+<span class="fc" id="L93">				.acos(Math.sin(lat1) * Math.sin(lat2) + Math.cos(lat1) * Math.cos(lat2) * Math.cos(lon1 - lon2));</span>
 
-<span class="fc" id="L96">		double nauticalMiles = 60 * Math.toDegrees(angle);</span>
-<span class="fc" id="L97">		double statuteMiles = STATUTE_MILES_PER_NAUTICAL_MILE * nauticalMiles;</span>
-<span class="fc" id="L98">		return statuteMiles;</span>
+<span class="fc" id="L95">		double nauticalMiles = 60 * Math.toDegrees(angle);</span>
+<span class="fc" id="L96">		return STATUTE_MILES_PER_NAUTICAL_MILE * nauticalMiles;</span>
 	}
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

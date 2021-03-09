@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">5</div>
+<div class="counter">9</div>
 <p>tests</p>
 </div>
 </td>
@@ -35,13 +35,13 @@
 </td>
 <td>
 <div class="infoBox" id="ignored">
-<div class="counter">1</div>
+<div class="counter">0</div>
 <p>ignored</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.552s</div>
+<div class="counter">1.248s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,7 +50,7 @@
 </div>
 </td>
 <td>
-<div class="infoBox skipped" id="successRate">
+<div class="infoBox success" id="successRate">
 <div class="percent">100%</div>
 <p>successful</p>
 </div>
@@ -66,9 +66,6 @@
 <li>
 <a href="#tab1">Standard output</a>
 </li>
-<li>
-<a href="#tab2">Standard error</a>
-</li>
 </ul>
 <div id="tab0" class="tab">
 <h2>Tests</h2>
@@ -82,7 +79,7 @@
 </thead>
 <tr>
 <td class="success">addUser</td>
-<td class="success">0.003s</td>
+<td class="success">0.005s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -91,18 +88,38 @@
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="skipped">getNearbyAttractions</td>
-<td class="skipped">-</td>
-<td class="skipped">ignored</td>
+<td class="success">getAllUsersLocations</td>
+<td class="success">0.020s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getAllUsersLocationsJSON</td>
+<td class="success">0.053s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getFiveClosestAttractionJSON</td>
+<td class="success">0.875s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getNearbyAttractions</td>
+<td class="success">0.091s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getTripDeals</td>
+<td class="success">0.045s</td>
+<td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">getUserLocation</td>
-<td class="success">0.484s</td>
+<td class="success">0.064s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">trackUser</td>
-<td class="success">0.063s</td>
+<td class="success">0.093s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -110,38 +127,15 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>20:00:50.477 [Test worker] INFO tourGuide.service.TourGuideService - TestMode enabled
-20:00:50.493 [Test worker] DEBUG tourGuide.service.TourGuideService - Initializing users
-20:00:50.501 [Test worker] DEBUG tourGuide.service.TourGuideService - Created 0 internal test users.
-20:00:50.502 [Test worker] DEBUG tourGuide.service.TourGuideService - Finished initializing users
-20:00:50.530 [pool-2-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 0 users.
-20:00:50.532 [pool-2-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:00:50.532 [pool-2-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:00:50.734 [Test worker] INFO tourGuide.service.TourGuideService - TestMode enabled
-20:00:50.735 [Test worker] DEBUG tourGuide.service.TourGuideService - Initializing users
-20:00:50.735 [Test worker] DEBUG tourGuide.service.TourGuideService - Created 0 internal test users.
-20:00:50.735 [Test worker] DEBUG tourGuide.service.TourGuideService - Finished initializing users
-20:00:50.737 [Test worker] INFO tourGuide.service.TourGuideService - TestMode enabled
-20:00:50.737 [Test worker] DEBUG tourGuide.service.TourGuideService - Initializing users
-20:00:50.738 [Test worker] DEBUG tourGuide.service.TourGuideService - Created 0 internal test users.
-20:00:50.738 [Test worker] DEBUG tourGuide.service.TourGuideService - Finished initializing users
-20:00:50.740 [Test worker] INFO tourGuide.service.TourGuideService - TestMode enabled
-20:00:50.740 [Test worker] DEBUG tourGuide.service.TourGuideService - Initializing users
-20:00:50.740 [Test worker] DEBUG tourGuide.service.TourGuideService - Created 0 internal test users.
-20:00:50.740 [Test worker] DEBUG tourGuide.service.TourGuideService - Finished initializing users
-20:00:50.745 [pool-6-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker stopping
-20:00:50.745 [pool-4-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker stopping
-20:00:50.750 [pool-8-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 0 users.
-20:00:50.752 [pool-8-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:00:50.752 [pool-8-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-</pre>
-</span>
-</div>
-<div id="tab2" class="tab">
-<h2>Standard error</h2>
-<span class="code">
-<pre>Mar 08, 2021 8:00:50 PM org.javamoney.moneta.DefaultMonetaryContextFactory createMonetaryContextNonNullConfig
-INFO: Using custom MathContext: precision=256, roundingMode=HALF_EVEN
+<pre>2021-03-09 15:08:43.838  INFO 22064 --- [    Test worker] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 15:08:43.905  INFO 22064 --- [    Test worker] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 15:08:43.910  INFO 22064 --- [    Test worker] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 15:08:43.956  INFO 22064 --- [    Test worker] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 15:08:43.958  INFO 22064 --- [    Test worker] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 15:08:44.011  INFO 22064 --- [    Test worker] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 15:08:44.886  INFO 22064 --- [    Test worker] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 15:08:44.979  INFO 22064 --- [    Test worker] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 15:08:45.072  INFO 22064 --- [    Test worker] tourGuide.service.TourGuideService       : TestMode enabled
 </pre>
 </span>
 </div>
@@ -153,7 +147,7 @@ INFO: Using custom MathContext: precision=256, roundingMode=HALF_EVEN
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 6.6.1</a> at 8 mars 2021 20:01:45</p>
+<a href="http://www.gradle.org">Gradle 6.6.1</a> at 9 mars 2021 15:23:51</p>
 </div>
 </div>
 </body>

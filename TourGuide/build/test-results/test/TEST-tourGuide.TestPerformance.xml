@@ -1,24 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="tourGuide.TestPerformance" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-03-08T19:00:50" hostname="DESKTOP-1N3M7NR" time="1.058">
+<testsuite name="tourGuide.TestPerformance" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-03-09T14:08:45" hostname="DESKTOP-1N3M7NR" time="901.297">
   <properties/>
-  <testcase name="highVolumeTrackLocation" classname="tourGuide.TestPerformance" time="0.128"/>
-  <testcase name="highVolumeGetRewards" classname="tourGuide.TestPerformance" time="0.93"/>
-  <system-out><![CDATA[20:00:50.812 [Test worker] INFO tourGuide.service.TourGuideService - TestMode enabled
-20:00:50.812 [Test worker] DEBUG tourGuide.service.TourGuideService - Initializing users
-20:00:50.847 [Test worker] DEBUG tourGuide.service.TourGuideService - Created 5 internal test users.
-20:00:50.847 [Test worker] DEBUG tourGuide.service.TourGuideService - Finished initializing users
-20:00:50.848 [pool-10-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5 users.
-20:00:50.851 [pool-10-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:00:50.852 [pool-10-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-highVolumeTrackLocation: Time Elapsed: 0 seconds.
-20:00:50.939 [Test worker] INFO tourGuide.service.TourGuideService - TestMode enabled
-20:00:50.940 [Test worker] DEBUG tourGuide.service.TourGuideService - Initializing users
-20:00:50.941 [Test worker] DEBUG tourGuide.service.TourGuideService - Created 5 internal test users.
-20:00:50.942 [Test worker] DEBUG tourGuide.service.TourGuideService - Finished initializing users
-20:00:50.958 [pool-12-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5 users.
-20:00:50.970 [pool-12-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:00:50.970 [pool-12-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-highVolumeGetRewards: Time Elapsed: 0 seconds.
+  <testcase name="highVolumeTrackLocation" classname="tourGuide.TestPerformance" time="401.373"/>
+  <testcase name="highVolumeGetRewards" classname="tourGuide.TestPerformance" time="499.924"/>
+  <system-out><![CDATA[2021-03-09 15:08:45.099  INFO 22064 --- [    Test worker] tourGuide.service.TourGuideService       : TestMode enabled
+highVolumeTrackLocation: Time Elapsed: 400 seconds.
+2021-03-09 15:15:26.472  INFO 22064 --- [    Test worker] tourGuide.service.TourGuideService       : TestMode enabled
+highVolumeGetRewards: Time Elapsed: 498 seconds.
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

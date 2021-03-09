@@ -1,27 +1,25 @@
 tourGuide/user/UserPreferences.java
  tourGuide.user.UserPreferences
-tourGuide/service/RewardsService.java
- tourGuide.service.RewardsService
+tourGuide/user/User.java
+ tourGuide.user.User
 tourGuide/user/UserReward.java
  tourGuide.user.UserReward
-tourGuide/service/UserService.java
- tourGuide.service.UserService
+tourGuide/model/AttractionDistance.java
+ tourGuide.model.AttractionDistance
 tourGuide/helper/InternalTestHelper.java
  tourGuide.helper.InternalTestHelper
+tourGuide/Application.java
+ tourGuide.Application
+tourGuide/model/AttractionNearby.java
+ tourGuide.model.AttractionNearby
+tourGuide/service/RewardsService.java
+ tourGuide.service.RewardsService
 tourGuide/service/TourGuideService.java
  tourGuide.service.TourGuideService
  tourGuide.service.TourGuideService$1
-tourGuide/TourGuideController.java
- tourGuide.TourGuideController
-tourGuide/model/AttractionNearby.java
- tourGuide.model.AttractionNearby
-tourGuide/model/AttractionDistance.java
- tourGuide.model.AttractionDistance
-tourGuide/Application.java
- tourGuide.Application
 tourGuide/tracker/Tracker.java
  tourGuide.tracker.Tracker
-tourGuide/user/User.java
- tourGuide.user.User
 tourGuide/TourGuideModule.java
  tourGuide.TourGuideModule
+tourGuide/TourGuideController.java
+ tourGuide.TourGuideController

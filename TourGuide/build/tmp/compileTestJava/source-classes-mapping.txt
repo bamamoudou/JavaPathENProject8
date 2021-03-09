@@ -1,10 +1,10 @@
-tourGuide/services/TestRewardsService.java
- tourGuide.services.TestRewardsService
-tourGuide/services/UserServiceTest.java
- tourGuide.services.UserServiceTest
-tourGuide/services/TestHelperService.java
- tourGuide.services.TestHelperService
 tourGuide/services/TestTourGuideService.java
  tourGuide.services.TestTourGuideService
+tourGuide/services/TestModel.java
+ tourGuide.services.TestModel
 tourGuide/TestPerformance.java
  tourGuide.TestPerformance
+tourGuide/services/TestRewardsService.java
+ tourGuide.services.TestRewardsService
+tourGuide/TestTourGuideController.java
+ tourGuide.TestTourGuideController
