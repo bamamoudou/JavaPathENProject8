@@ -48,17 +48,16 @@ public class RewardsService {
 		for (VisitedLocation visitedLocation : userLocations) {
 			for (Attraction attraction : attractions) {
 				if (user.getUserRewards().stream()
-						.filter(r -> r.attraction.attractionName.equals(attraction.attractionName)).count() == 0) {
-					if (nearAttraction(visitedLocation, attraction)) {
-						user.addUserReward(new UserReward(visitedLocation, attraction, getRewardPoints(attraction, user)));
-					}
+						.noneMatch(r -> r.attraction.attractionName.equals(attraction.attractionName))
+						&& nearAttraction(visitedLocation, attraction)) {
+					user.addUserReward(new UserReward(visitedLocation, attraction, getRewardPoints(attraction, user)));
 				}
 			}
 		}
 	}
 
 	public CompletableFuture<Void> calculateRewardAsync(User user) {
-		return CompletableFuture.runAsync(() -> this.calculateRewards(user), executorService);
+		return CompletableFuture.runAsync(() -> this.calculateRewards(user), this.executorService);
 	}
 
 	public CompletableFuture<List<Void>> calculateUsersListReward(List<User> usersList) {
@@ -80,7 +79,7 @@ public class RewardsService {
 		return !(getDistance(attraction, visitedLocation.location) > proximityBuffer);
 	}
 
-	private int getRewardPoints(Attraction attraction, User user) {
+	public int getRewardPoints(Attraction attraction, User user) {
 		return rewardsCentral.getAttractionRewardPoints(attraction.attractionId, user.getUserId());
 	}
 
@@ -94,7 +93,6 @@ public class RewardsService {
 				.acos(Math.sin(lat1) * Math.sin(lat2) + Math.cos(lat1) * Math.cos(lat2) * Math.cos(lon1 - lon2));
 
 		double nauticalMiles = 60 * Math.toDegrees(angle);
-		double statuteMiles = STATUTE_MILES_PER_NAUTICAL_MILE * nauticalMiles;
-		return statuteMiles;
+		return STATUTE_MILES_PER_NAUTICAL_MILE * nauticalMiles;
 	}
 }

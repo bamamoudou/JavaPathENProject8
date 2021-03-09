@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import java.util.TreeMap;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
@@ -69,7 +70,7 @@ public class TourGuideService {
 	}
 
 	public List<User> getAllUsers() {
-		return internalUserMap.values().stream().collect(Collectors.toList());
+		return new ArrayList<>(internalUserMap.values());
 	}
 
 	public void addUser(User user) {
@@ -91,7 +92,7 @@ public class TourGuideService {
 		return CompletableFuture.supplyAsync(() -> {
 			VisitedLocation visitedLocation = gpsUtil.getUserLocation(user.getUserId());
 			user.addToVisitedLocations(visitedLocation);
-			CompletableFuture.runAsync(() -> rewardsService.calculateRewards(user));
+			rewardsService.calculateRewards(user);
 			return visitedLocation;
 		}, executorService);
 	}
@@ -107,15 +108,55 @@ public class TourGuideService {
 				v -> allVisitedLocationFutures.stream().map(CompletableFuture::join).collect(Collectors.toList()));
 	}
 
-	public List<Attraction> getNearByAttractions(VisitedLocation visitedLocation) {
+	public List<Attraction> getNearbyAttractions(VisitedLocation visitedLocation) {
 		List<Attraction> nearbyAttractions = new ArrayList<>();
-		for (Attraction attraction : gpsUtil.getAttractions()) {
-			if (rewardsService.isWithinAttractionProximity(attraction, visitedLocation.location)) {
-				nearbyAttractions.add(attraction);
-			}
+		Map<Double, Attraction> attractionMap = new HashMap<>();
+
+		gpsUtil.getAttractions().stream()
+				.forEach(a -> attractionMap.put(rewardsService.getDistance(a, visitedLocation.location), a));
+
+		int i = 5;
+		for (Map.Entry<Double, Attraction> entry : new TreeMap<>(attractionMap).entrySet()) {
+			if (i != 0) {
+				nearbyAttractions.add(entry.getValue());
+				i--;
+			} else
+				break;
 		}
 
 		return nearbyAttractions;
+	}
+
+	public String getFiveClosestAttractionJSON(User user) throws ExecutionException, InterruptedException {
+		VisitedLocation userLocation = getUserLocation(user);
+		List<Attraction> closestAttractionsLists = getNearbyAttractions(userLocation);
+		StringBuffer result = new StringBuffer();
+
+		result.append("{\"userLocation\" : ");
+		result.append("{").append("\"longitude\" : ").append(userLocation.location.longitude).append(",");
+		result.append("\"latitude\" : ").append(userLocation.location.latitude).append("},");
+		result.append("\"closestAttractions\" : ");
+
+		List<CompletableFuture<String>> closestAttractionsListFutures = closestAttractionsLists.stream()
+				.map(a -> CompletableFuture.supplyAsync(() -> {
+					StringBuffer res = new StringBuffer();
+					res.append("{\"attractionName\" : \"").append(a.attractionName).append("\",");
+					res.append("\"city\" : \"").append(a.city).append("\",");
+					res.append("\"state\" : \"").append(a.state).append("\",");
+					res.append("\"distance\" : ").append(rewardsService.getDistance(userLocation.location, a)).append(",");
+					res.append("\"reward\" : ").append(rewardsService.getRewardPoints(a, user)).append("}");
+					return res.toString();
+				}, executorService)).collect(Collectors.toList());
+
+		CompletableFuture<Void> allFutures = CompletableFuture
+				.allOf(closestAttractionsListFutures.toArray(new CompletableFuture[closestAttractionsListFutures.size()]));
+
+		CompletableFuture<List<String>> allRes = allFutures.thenApply(
+				v -> closestAttractionsListFutures.stream().map(CompletableFuture::join).collect(Collectors.toList()));
+
+		result.append(allRes.get());
+		result.append("}");
+		return result.toString();
 	}
 
 	private void addShutDownHook() {
@@ -124,6 +165,29 @@ public class TourGuideService {
 				tracker.stopTracking();
 			}
 		});
+	}
+
+	public List<VisitedLocation> getAllUsersLocations() {
+		List<VisitedLocation> usersLocationsList = new ArrayList<>();
+		this.getAllUsers().stream().forEach(u -> usersLocationsList.add(u.getLastVisitedLocation()));
+		return usersLocationsList;
+	}
+
+	public String getAllUsersLocationsJSON() {
+		List<VisitedLocation> allUsersLocations = getAllUsersLocations();
+		StringBuffer result = new StringBuffer();
+
+		result.append("{");
+		for (VisitedLocation visitedLocation : allUsersLocations) {
+			result.append("\"").append(visitedLocation.userId.toString()).append("\":");
+			result.append("{").append("\"longitude\" : ").append(visitedLocation.location.longitude).append(",");
+			result.append("\"latitude\" : ").append(visitedLocation.location.latitude).append("}");
+			if (!visitedLocation.equals(allUsersLocations.get(allUsersLocations.size() - 1))) {
+				result.append(",");
+			}
+		}
+		result.append("}");
+		return result.toString();
 	}
 
 	/**********************************************************************************
@@ -150,10 +214,8 @@ public class TourGuideService {
 	}
 
 	private void generateUserLocationHistory(User user) {
-		IntStream.range(0, 3).forEach(i -> {
-			user.addToVisitedLocations(new VisitedLocation(user.getUserId(),
-					new Location(generateRandomLatitude(), generateRandomLongitude()), getRandomTime()));
-		});
+		IntStream.range(0, 3).forEach(i -> user.addToVisitedLocations(new VisitedLocation(user.getUserId(),
+				new Location(generateRandomLatitude(), generateRandomLongitude()), getRandomTime())));
 	}
 
 	private double generateRandomLongitude() {

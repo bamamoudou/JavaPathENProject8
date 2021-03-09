@@ -1,29 +1,395 @@
-2021-03-08 19:45:31.550  INFO 9276 --- [main] tourGuide.services.UserServiceTest       : Starting UserServiceTest on DESKTOP-1N3M7NR with PID 9276 (started by adoba in C:\Users\adoba\eclipse-workspace\JavaPathENProject8\TourGuide)
-2021-03-08 19:45:31.553  INFO 9276 --- [main] tourGuide.services.UserServiceTest       : No active profile set, falling back to default profiles: default
-2021-03-08 19:45:34.645  INFO 9276 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
-2021-03-08 19:45:35.056  INFO 9276 --- [main] o.j.m.DefaultMonetaryContextFactory      : Using custom MathContext: precision=256, roundingMode=HALF_EVEN
-2021-03-08 19:45:38.286  INFO 9276 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
-2021-03-08 19:45:38.463  INFO 9276 --- [main] tourGuide.services.UserServiceTest       : Started UserServiceTest in 7.755 seconds (JVM running for 9.804)
-2021-03-08 19:45:39.370  INFO 9276 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
-2021-03-08 19:45:39.463  INFO 9276 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
-2021-03-08 19:45:39.466  INFO 9276 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
-2021-03-08 19:45:39.467  INFO 9276 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
-2021-03-08 19:45:39.571  INFO 9276 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
-2021-03-08 19:46:19.756  INFO 9276 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
-2021-03-08 19:46:19.780  INFO 9276 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
-2021-03-08 19:46:19.881  INFO 9276 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
-2021-03-08 19:54:29.218  INFO 16744 --- [Test worker] tourGuide.services.UserServiceTest       : Starting UserServiceTest on DESKTOP-1N3M7NR with PID 16744 (started by adoba in C:\Users\adoba\eclipse-workspace\JavaPathENProject8\TourGuide)
-2021-03-08 19:54:29.227  INFO 16744 --- [Test worker] tourGuide.services.UserServiceTest       : No active profile set, falling back to default profiles: default
-2021-03-08 19:54:33.807  INFO 16744 --- [Test worker] tourGuide.service.TourGuideService       : TestMode enabled
-2021-03-08 19:54:38.374  INFO 16744 --- [Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
-2021-03-08 19:54:38.552  INFO 16744 --- [Test worker] tourGuide.services.UserServiceTest       : Started UserServiceTest in 10.911 seconds (JVM running for 53.601)
-2021-03-08 19:58:01.838  INFO 16812 --- [Test worker] tourGuide.services.UserServiceTest       : Starting UserServiceTest on DESKTOP-1N3M7NR with PID 16812 (started by adoba in C:\Users\adoba\eclipse-workspace\JavaPathENProject8\TourGuide)
-2021-03-08 19:58:01.844  INFO 16812 --- [Test worker] tourGuide.services.UserServiceTest       : No active profile set, falling back to default profiles: default
-2021-03-08 19:58:06.573  INFO 16812 --- [Test worker] tourGuide.service.TourGuideService       : TestMode enabled
-2021-03-08 19:58:11.138  INFO 16812 --- [Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
-2021-03-08 19:58:11.342  INFO 16812 --- [Test worker] tourGuide.services.UserServiceTest       : Started UserServiceTest in 11.425 seconds (JVM running for 54.197)
-2021-03-08 20:01:36.202  INFO 6364 --- [Test worker] tourGuide.services.UserServiceTest       : Starting UserServiceTest on DESKTOP-1N3M7NR with PID 6364 (started by adoba in C:\Users\adoba\eclipse-workspace\JavaPathENProject8\TourGuide)
-2021-03-08 20:01:36.225  INFO 6364 --- [Test worker] tourGuide.services.UserServiceTest       : No active profile set, falling back to default profiles: default
-2021-03-08 20:01:40.246  INFO 6364 --- [Test worker] tourGuide.service.TourGuideService       : TestMode enabled
-2021-03-08 20:01:44.528  INFO 6364 --- [Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
-2021-03-08 20:01:44.705  INFO 6364 --- [Test worker] tourGuide.services.UserServiceTest       : Started UserServiceTest in 10.018 seconds (JVM running for 56.684)
+2021-03-09 13:16:23.450  INFO 16856 --- [main] tourGuide.services.TestModel             : Starting TestModel on DESKTOP-1N3M7NR with PID 16856 (started by adoba in C:\Users\adoba\eclipse-workspace\JavaPathENProject8\TourGuide)
+2021-03-09 13:16:23.472  INFO 16856 --- [main] tourGuide.services.TestModel             : No active profile set, falling back to default profiles: default
+2021-03-09 13:16:26.617  INFO 16856 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:16:27.078  INFO 16856 --- [main] o.j.m.DefaultMonetaryContextFactory      : Using custom MathContext: precision=256, roundingMode=HALF_EVEN
+2021-03-09 13:16:30.921  INFO 16856 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-03-09 13:16:31.250  INFO 16856 --- [main] tourGuide.services.TestModel             : Started TestModel in 9.156 seconds (JVM running for 11.418)
+2021-03-09 13:16:32.279  INFO 16856 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:16:32.360  INFO 16856 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:16:32.361  INFO 16856 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:16:32.402  INFO 16856 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:16:32.404  INFO 16856 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:16:32.482  INFO 16856 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:16:33.164  INFO 16856 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:16:33.279  INFO 16856 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:16:33.357  INFO 16856 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:16:33.369  INFO 16856 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:17:06.377  INFO 16856 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:17:07.013  INFO 16856 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:17:07.079  INFO 16856 --- [main] tourGuide.TestTourGuideController        : Starting TestTourGuideController on DESKTOP-1N3M7NR with PID 16856 (started by adoba in C:\Users\adoba\eclipse-workspace\JavaPathENProject8\TourGuide)
+2021-03-09 13:17:07.080  INFO 16856 --- [main] tourGuide.TestTourGuideController        : No active profile set, falling back to default profiles: default
+2021-03-09 13:17:07.538  INFO 16856 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:17:08.713  INFO 16856 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:17:08.714  INFO 16856 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:17:08.759  INFO 16856 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 43 ms
+2021-03-09 13:17:08.837  INFO 16856 --- [main] tourGuide.TestTourGuideController        : Started TestTourGuideController in 1.81 seconds (JVM running for 49.006)
+2021-03-09 13:17:08.851  INFO 16856 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:17:08.852  INFO 16856 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:17:08.869  INFO 16856 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 17 ms
+2021-03-09 13:17:09.111  INFO 16856 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:17:09.112  INFO 16856 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:17:09.116  INFO 16856 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2021-03-09 13:17:09.123  INFO 16856 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:17:09.124  INFO 16856 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:17:09.127  INFO 16856 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2021-03-09 13:17:09.204  INFO 16856 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:17:09.204  INFO 16856 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:17:09.214  INFO 16856 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 9 ms
+2021-03-09 13:17:09.346  INFO 16856 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:17:09.347  INFO 16856 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:17:09.350  INFO 16856 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2021-03-09 13:17:09.369  INFO 16856 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:17:09.371  INFO 16856 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:17:09.381  INFO 16856 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 7 ms
+2021-03-09 13:17:09.386  INFO 16856 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:17:09.503  INFO 16856 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:21:25.202  INFO 20912 --- [main] tourGuide.services.TestModel             : Starting TestModel on DESKTOP-1N3M7NR with PID 20912 (started by adoba in C:\Users\adoba\eclipse-workspace\JavaPathENProject8\TourGuide)
+2021-03-09 13:21:25.206  INFO 20912 --- [main] tourGuide.services.TestModel             : No active profile set, falling back to default profiles: default
+2021-03-09 13:21:28.282  INFO 20912 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:21:28.767  INFO 20912 --- [main] o.j.m.DefaultMonetaryContextFactory      : Using custom MathContext: precision=256, roundingMode=HALF_EVEN
+2021-03-09 13:21:32.162  INFO 20912 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-03-09 13:21:32.433  INFO 20912 --- [main] tourGuide.services.TestModel             : Started TestModel in 7.906 seconds (JVM running for 10.483)
+2021-03-09 13:21:33.982  INFO 20912 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:21:34.069  INFO 20912 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:21:34.073  INFO 20912 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:21:34.102  INFO 20912 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:21:34.105  INFO 20912 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:21:34.228  INFO 20912 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:21:34.941  INFO 20912 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:21:35.034  INFO 20912 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:21:35.114  INFO 20912 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:21:35.122  INFO 20912 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:22:13.537  INFO 20912 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:22:14.419  INFO 20912 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:22:14.585  INFO 20912 --- [main] tourGuide.TestTourGuideController        : Starting TestTourGuideController on DESKTOP-1N3M7NR with PID 20912 (started by adoba in C:\Users\adoba\eclipse-workspace\JavaPathENProject8\TourGuide)
+2021-03-09 13:22:14.587  INFO 20912 --- [main] tourGuide.TestTourGuideController        : No active profile set, falling back to default profiles: default
+2021-03-09 13:22:15.080  INFO 20912 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:22:16.010  INFO 20912 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:22:16.019  INFO 20912 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:22:16.057  INFO 20912 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 37 ms
+2021-03-09 13:22:16.111  INFO 20912 --- [main] tourGuide.TestTourGuideController        : Started TestTourGuideController in 1.676 seconds (JVM running for 54.16)
+2021-03-09 13:22:16.121  INFO 20912 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:22:16.121  INFO 20912 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:22:16.123  INFO 20912 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2021-03-09 13:22:16.357  INFO 20912 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:22:16.361  INFO 20912 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:22:16.372  INFO 20912 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 10 ms
+2021-03-09 13:22:16.388  INFO 20912 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:22:16.389  INFO 20912 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:22:16.394  INFO 20912 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2021-03-09 13:22:16.994  INFO 20912 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:22:16.994  INFO 20912 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:22:17.033  INFO 20912 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 38 ms
+2021-03-09 13:22:17.173  INFO 20912 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:22:17.185  INFO 20912 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:22:17.190  INFO 20912 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 5 ms
+2021-03-09 13:22:17.264  INFO 20912 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:22:17.264  INFO 20912 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:22:17.343  INFO 20912 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 74 ms
+2021-03-09 13:22:17.387  INFO 20912 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:22:17.535  INFO 20912 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:31:53.339  INFO 12936 --- [main] tourGuide.services.TestModel             : Starting TestModel on DESKTOP-1N3M7NR with PID 12936 (started by adoba in C:\Users\adoba\eclipse-workspace\JavaPathENProject8\TourGuide)
+2021-03-09 13:31:53.339  INFO 12936 --- [main] tourGuide.services.TestModel             : No active profile set, falling back to default profiles: default
+2021-03-09 13:31:57.127  INFO 12936 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:31:58.526  INFO 12936 --- [main] o.j.m.DefaultMonetaryContextFactory      : Using custom MathContext: precision=256, roundingMode=HALF_EVEN
+2021-03-09 13:32:04.909  INFO 12936 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-03-09 13:32:05.145  INFO 12936 --- [main] tourGuide.services.TestModel             : Started TestModel in 12.811 seconds (JVM running for 17.353)
+2021-03-09 13:32:06.111  INFO 12936 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:32:06.192  INFO 12936 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:32:06.200  INFO 12936 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:32:06.243  INFO 12936 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:32:06.243  INFO 12936 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:32:06.401  INFO 12936 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:32:07.542  INFO 12936 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:32:07.652  INFO 12936 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:32:07.735  INFO 12936 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:32:07.735  INFO 12936 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:32:49.118  INFO 12936 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:32:49.639  INFO 12936 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:32:49.753  INFO 12936 --- [main] tourGuide.TestTourGuideController        : Starting TestTourGuideController on DESKTOP-1N3M7NR with PID 12936 (started by adoba in C:\Users\adoba\eclipse-workspace\JavaPathENProject8\TourGuide)
+2021-03-09 13:32:49.758  INFO 12936 --- [main] tourGuide.TestTourGuideController        : No active profile set, falling back to default profiles: default
+2021-03-09 13:32:50.274  INFO 12936 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:32:51.574  INFO 12936 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:32:51.575  INFO 12936 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:32:51.611  INFO 12936 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 36 ms
+2021-03-09 13:32:51.694  INFO 12936 --- [main] tourGuide.TestTourGuideController        : Started TestTourGuideController in 2.038 seconds (JVM running for 63.888)
+2021-03-09 13:32:51.712  INFO 12936 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:32:51.713  INFO 12936 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:32:51.716  INFO 12936 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2021-03-09 13:32:51.908  INFO 12936 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:32:51.909  INFO 12936 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:32:51.914  INFO 12936 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 5 ms
+2021-03-09 13:32:51.926  INFO 12936 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:32:51.927  INFO 12936 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:32:51.930  INFO 12936 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2021-03-09 13:32:52.007  INFO 12936 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:32:52.007  INFO 12936 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:32:52.023  INFO 12936 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 12 ms
+2021-03-09 13:32:52.102  INFO 12936 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:32:52.103  INFO 12936 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:32:52.106  INFO 12936 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2021-03-09 13:32:52.154  INFO 12936 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:32:52.156  INFO 12936 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:32:52.174  INFO 12936 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 15 ms
+2021-03-09 13:41:34.413  INFO 16208 --- [main] tourGuide.services.TestModel             : Starting TestModel on DESKTOP-1N3M7NR with PID 16208 (started by adoba in C:\Users\adoba\eclipse-workspace\JavaPathENProject8\TourGuide)
+2021-03-09 13:41:34.415  INFO 16208 --- [main] tourGuide.services.TestModel             : No active profile set, falling back to default profiles: default
+2021-03-09 13:41:37.213  INFO 16208 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:41:37.699  INFO 16208 --- [main] o.j.m.DefaultMonetaryContextFactory      : Using custom MathContext: precision=256, roundingMode=HALF_EVEN
+2021-03-09 13:41:41.571  INFO 16208 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-03-09 13:41:41.747  INFO 16208 --- [main] tourGuide.services.TestModel             : Started TestModel in 8.095 seconds (JVM running for 9.817)
+2021-03-09 13:41:42.666  INFO 16208 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:41:42.742  INFO 16208 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:41:42.743  INFO 16208 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:41:42.764  INFO 16208 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:41:42.764  INFO 16208 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:41:42.857  INFO 16208 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:41:43.839  INFO 16208 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:41:43.960  INFO 16208 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:41:44.068  INFO 16208 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:41:44.078  INFO 16208 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:42:25.916  INFO 16208 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:42:27.008  INFO 16208 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:42:27.073  INFO 16208 --- [main] tourGuide.TestTourGuideController        : Starting TestTourGuideController on DESKTOP-1N3M7NR with PID 16208 (started by adoba in C:\Users\adoba\eclipse-workspace\JavaPathENProject8\TourGuide)
+2021-03-09 13:42:27.088  INFO 16208 --- [main] tourGuide.TestTourGuideController        : No active profile set, falling back to default profiles: default
+2021-03-09 13:42:27.520  INFO 16208 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:42:28.475  INFO 16208 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:42:28.476  INFO 16208 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:42:28.516  INFO 16208 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 39 ms
+2021-03-09 13:42:28.572  INFO 16208 --- [main] tourGuide.TestTourGuideController        : Started TestTourGuideController in 1.546 seconds (JVM running for 56.641)
+2021-03-09 13:42:28.581  INFO 16208 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:42:28.581  INFO 16208 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:42:28.588  INFO 16208 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 7 ms
+2021-03-09 13:42:28.788  INFO 16208 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:42:28.789  INFO 16208 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:42:28.792  INFO 16208 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2021-03-09 13:42:28.803  INFO 16208 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:42:28.804  INFO 16208 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:42:28.806  INFO 16208 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2021-03-09 13:42:28.833  INFO 16208 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:42:28.834  INFO 16208 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:42:28.839  INFO 16208 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 4 ms
+2021-03-09 13:42:28.895  INFO 16208 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:42:28.896  INFO 16208 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:42:28.903  INFO 16208 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2021-03-09 13:42:28.919  INFO 16208 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:42:28.919  INFO 16208 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:42:28.939  INFO 16208 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 17 ms
+2021-03-09 13:42:28.949  INFO 16208 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:42:29.047  INFO 16208 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:44:21.922  INFO 13944 --- [main] tourGuide.services.TestModel             : Starting TestModel on DESKTOP-1N3M7NR with PID 13944 (started by adoba in C:\Users\adoba\eclipse-workspace\JavaPathENProject8\TourGuide)
+2021-03-09 13:44:21.925  INFO 13944 --- [main] tourGuide.services.TestModel             : No active profile set, falling back to default profiles: default
+2021-03-09 13:44:24.897  INFO 13944 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:44:25.380  INFO 13944 --- [main] o.j.m.DefaultMonetaryContextFactory      : Using custom MathContext: precision=256, roundingMode=HALF_EVEN
+2021-03-09 13:44:28.507  INFO 13944 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-03-09 13:44:28.679  INFO 13944 --- [main] tourGuide.services.TestModel             : Started TestModel in 7.444 seconds (JVM running for 9.292)
+2021-03-09 13:44:29.337  INFO 13944 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:44:29.419  INFO 13944 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:44:29.422  INFO 13944 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:44:29.456  INFO 13944 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:44:29.456  INFO 13944 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:44:29.521  INFO 13944 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:44:30.108  INFO 13944 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:44:30.208  INFO 13944 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:44:30.315  INFO 13944 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:44:30.315  INFO 13944 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:45:08.108  INFO 13944 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:45:08.581  INFO 13944 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:45:08.664  INFO 13944 --- [main] tourGuide.TestTourGuideController        : Starting TestTourGuideController on DESKTOP-1N3M7NR with PID 13944 (started by adoba in C:\Users\adoba\eclipse-workspace\JavaPathENProject8\TourGuide)
+2021-03-09 13:45:08.666  INFO 13944 --- [main] tourGuide.TestTourGuideController        : No active profile set, falling back to default profiles: default
+2021-03-09 13:45:10.710  INFO 13944 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:45:10.711  INFO 13944 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:45:10.747  INFO 13944 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 35 ms
+2021-03-09 13:45:10.803  INFO 13944 --- [main] tourGuide.TestTourGuideController        : Started TestTourGuideController in 2.205 seconds (JVM running for 51.416)
+2021-03-09 13:45:10.814  INFO 13944 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:45:10.815  INFO 13944 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:45:10.817  INFO 13944 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2021-03-09 13:45:11.016  INFO 13944 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:45:11.017  INFO 13944 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:45:11.020  INFO 13944 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2021-03-09 13:45:11.035  INFO 13944 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:45:11.036  INFO 13944 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:45:11.038  INFO 13944 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2021-03-09 13:45:11.062  INFO 13944 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:45:11.062  INFO 13944 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:45:11.064  INFO 13944 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2021-03-09 13:45:11.156  INFO 13944 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:45:11.157  INFO 13944 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:45:11.161  INFO 13944 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 4 ms
+2021-03-09 13:45:11.172  INFO 13944 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:45:11.173  INFO 13944 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:45:11.188  INFO 13944 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 14 ms
+2021-03-09 13:45:11.230  INFO 13944 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:45:11.335  INFO 13944 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:47:21.561  INFO 16392 --- [main] tourGuide.services.TestModel             : Starting TestModel on DESKTOP-1N3M7NR with PID 16392 (started by adoba in C:\Users\adoba\eclipse-workspace\JavaPathENProject8\TourGuide)
+2021-03-09 13:47:21.561  INFO 16392 --- [main] tourGuide.services.TestModel             : No active profile set, falling back to default profiles: default
+2021-03-09 13:47:24.374  INFO 16392 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:47:24.873  INFO 16392 --- [main] o.j.m.DefaultMonetaryContextFactory      : Using custom MathContext: precision=256, roundingMode=HALF_EVEN
+2021-03-09 13:47:28.182  INFO 16392 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-03-09 13:47:28.426  INFO 16392 --- [main] tourGuide.services.TestModel             : Started TestModel in 7.526 seconds (JVM running for 9.486)
+2021-03-09 13:47:29.294  INFO 16392 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:47:29.466  INFO 16392 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:47:29.486  INFO 16392 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:47:29.517  INFO 16392 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:47:29.547  INFO 16392 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:47:29.797  INFO 16392 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:47:30.852  INFO 16392 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:47:30.951  INFO 16392 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:47:31.083  INFO 16392 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:47:31.083  INFO 16392 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:48:04.995  INFO 16392 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:48:05.162  INFO 16392 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:48:05.224  INFO 16392 --- [main] tourGuide.TestTourGuideController        : Starting TestTourGuideController on DESKTOP-1N3M7NR with PID 16392 (started by adoba in C:\Users\adoba\eclipse-workspace\JavaPathENProject8\TourGuide)
+2021-03-09 13:48:05.226  INFO 16392 --- [main] tourGuide.TestTourGuideController        : No active profile set, falling back to default profiles: default
+2021-03-09 13:48:06.929  INFO 16392 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:48:06.930  INFO 16392 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:48:06.969  INFO 16392 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 39 ms
+2021-03-09 13:48:07.023  INFO 16392 --- [main] tourGuide.TestTourGuideController        : Started TestTourGuideController in 1.846 seconds (JVM running for 48.082)
+2021-03-09 13:48:07.038  INFO 16392 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:48:07.039  INFO 16392 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:48:07.044  INFO 16392 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 5 ms
+2021-03-09 13:48:07.199  INFO 16392 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:48:07.200  INFO 16392 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:48:07.203  INFO 16392 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2021-03-09 13:48:07.217  INFO 16392 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:48:07.218  INFO 16392 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:48:07.220  INFO 16392 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2021-03-09 13:48:07.272  INFO 16392 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:48:07.272  INFO 16392 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:48:07.280  INFO 16392 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 7 ms
+2021-03-09 13:48:07.343  INFO 16392 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:48:07.347  INFO 16392 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:48:07.353  INFO 16392 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 6 ms
+2021-03-09 13:48:07.371  INFO 16392 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:48:07.372  INFO 16392 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:48:07.386  INFO 16392 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 13 ms
+2021-03-09 13:48:07.409  INFO 16392 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:48:07.517  INFO 16392 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:51:33.954  INFO 18948 --- [main] tourGuide.services.TestModel             : Starting TestModel on DESKTOP-1N3M7NR with PID 18948 (started by adoba in C:\Users\adoba\eclipse-workspace\JavaPathENProject8\TourGuide)
+2021-03-09 13:51:33.959  INFO 18948 --- [main] tourGuide.services.TestModel             : No active profile set, falling back to default profiles: default
+2021-03-09 13:51:36.824  INFO 18948 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:51:37.309  INFO 18948 --- [main] o.j.m.DefaultMonetaryContextFactory      : Using custom MathContext: precision=256, roundingMode=HALF_EVEN
+2021-03-09 13:51:40.943  INFO 18948 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-03-09 13:51:41.311  INFO 18948 --- [main] tourGuide.services.TestModel             : Started TestModel in 8.034 seconds (JVM running for 10.123)
+2021-03-09 13:51:42.098  INFO 18948 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:51:42.171  INFO 18948 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:51:42.171  INFO 18948 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:51:42.184  INFO 18948 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:51:42.184  INFO 18948 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:51:42.247  INFO 18948 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:51:43.252  INFO 18948 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:51:43.345  INFO 18948 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:51:43.411  INFO 18948 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:51:43.411  INFO 18948 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:52:23.546  INFO 18948 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:52:24.085  INFO 18948 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:52:24.240  INFO 18948 --- [main] tourGuide.TestTourGuideController        : Starting TestTourGuideController on DESKTOP-1N3M7NR with PID 18948 (started by adoba in C:\Users\adoba\eclipse-workspace\JavaPathENProject8\TourGuide)
+2021-03-09 13:52:24.241  INFO 18948 --- [main] tourGuide.TestTourGuideController        : No active profile set, falling back to default profiles: default
+2021-03-09 13:52:26.416  INFO 18948 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:52:26.417  INFO 18948 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:52:26.477  INFO 18948 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 58 ms
+2021-03-09 13:52:26.562  INFO 18948 --- [main] tourGuide.TestTourGuideController        : Started TestTourGuideController in 2.46 seconds (JVM running for 55.375)
+2021-03-09 13:52:26.577  INFO 18948 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:52:26.577  INFO 18948 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:52:26.585  INFO 18948 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 7 ms
+2021-03-09 13:52:26.836  INFO 18948 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:52:26.837  INFO 18948 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:52:26.852  INFO 18948 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 14 ms
+2021-03-09 13:52:26.869  INFO 18948 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:52:26.869  INFO 18948 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:52:26.873  INFO 18948 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2021-03-09 13:52:26.911  INFO 18948 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:52:26.911  INFO 18948 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:52:26.914  INFO 18948 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2021-03-09 13:52:26.989  INFO 18948 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:52:26.993  INFO 18948 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:52:26.998  INFO 18948 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 4 ms
+2021-03-09 13:52:27.010  INFO 18948 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:52:27.011  INFO 18948 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:52:27.037  INFO 18948 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 26 ms
+2021-03-09 13:52:27.072  INFO 18948 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:52:27.187  INFO 18948 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:54:38.053  INFO 10216 --- [main] tourGuide.services.TestModel             : Starting TestModel on DESKTOP-1N3M7NR with PID 10216 (started by adoba in C:\Users\adoba\eclipse-workspace\JavaPathENProject8\TourGuide)
+2021-03-09 13:54:38.053  INFO 10216 --- [main] tourGuide.services.TestModel             : No active profile set, falling back to default profiles: default
+2021-03-09 13:54:40.631  INFO 10216 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:54:41.587  INFO 10216 --- [main] o.j.m.DefaultMonetaryContextFactory      : Using custom MathContext: precision=256, roundingMode=HALF_EVEN
+2021-03-09 13:54:44.812  INFO 10216 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-03-09 13:54:44.998  INFO 10216 --- [main] tourGuide.services.TestModel             : Started TestModel in 7.625 seconds (JVM running for 9.935)
+2021-03-09 13:54:45.506  INFO 10216 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:54:45.626  INFO 10216 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:54:45.626  INFO 10216 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:54:45.639  INFO 10216 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:54:45.639  INFO 10216 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:54:45.684  INFO 10216 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:54:46.592  INFO 10216 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:54:46.712  INFO 10216 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:54:46.830  INFO 10216 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:54:46.850  INFO 10216 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:55:21.149  INFO 10216 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:55:22.117  INFO 10216 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:55:22.177  INFO 10216 --- [main] tourGuide.TestTourGuideController        : Starting TestTourGuideController on DESKTOP-1N3M7NR with PID 10216 (started by adoba in C:\Users\adoba\eclipse-workspace\JavaPathENProject8\TourGuide)
+2021-03-09 13:55:22.179  INFO 10216 --- [main] tourGuide.TestTourGuideController        : No active profile set, falling back to default profiles: default
+2021-03-09 13:55:23.731  INFO 10216 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:55:23.731  INFO 10216 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:55:23.762  INFO 10216 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 30 ms
+2021-03-09 13:55:23.807  INFO 10216 --- [main] tourGuide.TestTourGuideController        : Started TestTourGuideController in 1.675 seconds (JVM running for 48.744)
+2021-03-09 13:55:23.818  INFO 10216 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:55:23.819  INFO 10216 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:55:23.821  INFO 10216 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2021-03-09 13:55:23.993  INFO 10216 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:55:23.994  INFO 10216 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:55:23.997  INFO 10216 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2021-03-09 13:55:24.008  INFO 10216 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:55:24.009  INFO 10216 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:55:24.011  INFO 10216 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2021-03-09 13:55:24.036  INFO 10216 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:55:24.036  INFO 10216 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:55:24.040  INFO 10216 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 4 ms
+2021-03-09 13:55:24.118  INFO 10216 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:55:24.123  INFO 10216 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:55:24.127  INFO 10216 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2021-03-09 13:55:24.137  INFO 10216 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 13:55:24.140  INFO 10216 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 13:55:24.149  INFO 10216 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 9 ms
+2021-03-09 13:55:24.168  INFO 10216 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 13:55:24.267  INFO 10216 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 14:03:17.401  INFO 18120 --- [main] tourGuide.services.TestModel             : Starting TestModel on DESKTOP-1N3M7NR with PID 18120 (started by adoba in C:\Users\adoba\eclipse-workspace\JavaPathENProject8\TourGuide)
+2021-03-09 14:03:17.401  INFO 18120 --- [main] tourGuide.services.TestModel             : No active profile set, falling back to default profiles: default
+2021-03-09 14:03:20.431  INFO 18120 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 14:03:20.848  INFO 18120 --- [main] o.j.m.DefaultMonetaryContextFactory      : Using custom MathContext: precision=256, roundingMode=HALF_EVEN
+2021-03-09 14:03:24.108  INFO 18120 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-03-09 14:03:24.299  INFO 18120 --- [main] tourGuide.services.TestModel             : Started TestModel in 7.529 seconds (JVM running for 9.338)
+2021-03-09 14:03:25.463  INFO 18120 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 14:03:25.566  INFO 18120 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 14:03:25.566  INFO 18120 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 14:03:25.675  INFO 18120 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 14:03:25.677  INFO 18120 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 14:03:25.919  INFO 18120 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 14:03:26.722  INFO 18120 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 14:03:26.831  INFO 18120 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 14:03:26.966  INFO 18120 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 14:03:26.969  INFO 18120 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 14:03:59.859  INFO 18120 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 14:04:00.106  INFO 18120 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 14:04:00.236  INFO 18120 --- [main] tourGuide.TestTourGuideController        : Starting TestTourGuideController on DESKTOP-1N3M7NR with PID 18120 (started by adoba in C:\Users\adoba\eclipse-workspace\JavaPathENProject8\TourGuide)
+2021-03-09 14:04:00.240  INFO 18120 --- [main] tourGuide.TestTourGuideController        : No active profile set, falling back to default profiles: default
+2021-03-09 14:04:02.859  INFO 18120 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 14:04:02.860  INFO 18120 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 14:04:02.888  INFO 18120 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 28 ms
+2021-03-09 14:04:02.944  INFO 18120 --- [main] tourGuide.TestTourGuideController        : Started TestTourGuideController in 2.822 seconds (JVM running for 47.983)
+2021-03-09 14:04:02.952  INFO 18120 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 14:04:02.953  INFO 18120 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 14:04:02.955  INFO 18120 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2021-03-09 14:04:03.102  INFO 18120 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 14:04:03.104  INFO 18120 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 14:04:03.112  INFO 18120 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 7 ms
+2021-03-09 14:04:03.124  INFO 18120 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 14:04:03.124  INFO 18120 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 14:04:03.129  INFO 18120 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 4 ms
+2021-03-09 14:04:03.184  INFO 18120 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 14:04:03.184  INFO 18120 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 14:04:03.191  INFO 18120 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 6 ms
+2021-03-09 14:04:03.259  INFO 18120 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-03-09 14:04:03.262  INFO 18120 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-03-09 14:04:03.278  INFO 18120 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 16 ms
+2021-03-09 14:04:03.285  INFO 18120 --- [main] tourGuide.service.TourGuideService       : TestMode enabled
+2021-03-09 14:04:03.393  INFO 18120 --- [main] tourGuide.service.TourGuideService       : TestMode enabled

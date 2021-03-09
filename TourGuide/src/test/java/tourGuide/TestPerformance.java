@@ -4,7 +4,6 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -22,10 +21,9 @@ import tourGuide.service.RewardsService;
 import tourGuide.service.TourGuideService;
 import tourGuide.user.User;
 
-
 public class TestPerformance {
-	private ExecutorService executorService = Executors.newFixedThreadPool(1000);
-	private int nbrUsers = 5;
+//	private ExecutorService executorService = Executors.newFixedThreadPool(1000);
+//	private int nbrUsers = 5;
 
 	/*
 	 * A note on performance improvements:
@@ -50,15 +48,33 @@ public class TestPerformance {
 	 * TimeUnit.MILLISECONDS.toSeconds(stopWatch.getTime()));
 	 */
 
+	private ExecutorService executorService;
+	private GpsUtil gpsUtil;
+	private RewardsService rewardsService;
+	private TourGuideService tourGuideService;
+
+	private void initTest() {
+		executorService = Executors.newFixedThreadPool(1000);
+		gpsUtil = new GpsUtil();
+		rewardsService = new RewardsService(gpsUtil, new RewardCentral(), executorService);
+		InternalTestHelper.setInternalUserNumber(5); // Users should be incremented up to 100,000
+		tourGuideService = new TourGuideService(gpsUtil, rewardsService, executorService);
+
+	}
+
+	private void undefTest() {
+		InternalTestHelper.setInternalUserNumber(0);
+		executorService.shutdown();
+		executorService = null;
+		gpsUtil = null;
+		rewardsService = null;
+		tourGuideService = null;
+	}
+
+	// Must finish less than 15 minutes
 	@Test
 	public void highVolumeTrackLocation() throws ExecutionException, InterruptedException {
-		Locale.setDefault(Locale.US);
-		GpsUtil gpsUtil = new GpsUtil();
-		RewardsService rewardsService = new RewardsService(gpsUtil, new RewardCentral(), this.executorService);
-		// Users should be incremented up to 100,000, and test finishes within 15
-		// minutes
-		InternalTestHelper.setInternalUserNumber(this.nbrUsers);
-		TourGuideService tourGuideService = new TourGuideService(gpsUtil, rewardsService, this.executorService);
+		initTest();
 
 		List<User> allUsers = tourGuideService.getAllUsers();
 
@@ -72,19 +88,17 @@ public class TestPerformance {
 		System.out.println("highVolumeTrackLocation: Time Elapsed: "
 				+ TimeUnit.MILLISECONDS.toSeconds(stopWatch.getTime()) + " seconds.");
 		assertTrue(TimeUnit.MINUTES.toSeconds(15) >= TimeUnit.MILLISECONDS.toSeconds(stopWatch.getTime()));
+
+		undefTest();
 	}
 
+	// Must finish less than 20 minutes
 	@Test
 	public void highVolumeGetRewards() throws ExecutionException, InterruptedException {
-		GpsUtil gpsUtil = new GpsUtil();
-		RewardsService rewardsService = new RewardsService(gpsUtil, new RewardCentral(), this.executorService);
+		initTest();
 
-		// Users should be incremented up to 100,000, and test finishes within 20
-		// minutes
-		InternalTestHelper.setInternalUserNumber(this.nbrUsers);
 		StopWatch stopWatch = new StopWatch();
 		stopWatch.start();
-		TourGuideService tourGuideService = new TourGuideService(gpsUtil, rewardsService, this.executorService);
 
 		Attraction attraction = gpsUtil.getAttractions().get(0);
 		List<User> allUsers = tourGuideService.getAllUsers();
@@ -101,5 +115,7 @@ public class TestPerformance {
 		System.out.println("highVolumeGetRewards: Time Elapsed: " + TimeUnit.MILLISECONDS.toSeconds(stopWatch.getTime())
 				+ " seconds.");
 		assertTrue(TimeUnit.MINUTES.toSeconds(20) >= TimeUnit.MILLISECONDS.toSeconds(stopWatch.getTime()));
+
+		undefTest();
 	}
 }
