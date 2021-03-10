@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="tourGuide.services.TestModel" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-03-09T20:03:09" hostname="DESKTOP-1N3M7NR" time="0.464">
+<testsuite name="tourGuide.services.TestModel" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-03-10T14:23:16" hostname="DESKTOP-1N3M7NR" time="0.011">
   <properties/>
-  <testcase name="testUserPreference" classname="tourGuide.services.TestModel" time="0.338"/>
-  <testcase name="testUser" classname="tourGuide.services.TestModel" time="0.105"/>
-  <testcase name="testUserReward" classname="tourGuide.services.TestModel" time="0.008"/>
+  <testcase name="testUserPreference" classname="tourGuide.services.TestModel" time="0.001"/>
+  <testcase name="testUser" classname="tourGuide.services.TestModel" time="0.009"/>
+  <testcase name="testUserReward" classname="tourGuide.services.TestModel" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[mars 09, 2021 9:03:09 PM org.javamoney.moneta.DefaultMonetaryContextFactory createMonetaryContextNonNullConfig
-INFOS: Using custom MathContext: precision=256, roundingMode=HALF_EVEN
-]]></system-err>
+  <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -5,6 +5,7 @@ import java.util.concurrent.ExecutionException;
 
 import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,6 +28,11 @@ public class TourGuideController {
 	@RequestMapping("/getLocation")
 	public String getLocation(@RequestParam String userName) throws ExecutionException, InterruptedException {
 		return JsonStream.serialize(tourGuideService.getUserLocation(getUser(userName)).location);
+	}
+	
+	@GetMapping("/getAllUsers")
+	public String getUsers() {
+		return JsonStream.serialize(tourGuideService.getAllUsers());
 	}
 
 	// TODO: Change this method to no longer return a List of Attractions.

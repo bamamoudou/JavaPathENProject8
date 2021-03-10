@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="tourGuide.TestPerformance" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-03-09T20:03:26" hostname="DESKTOP-1N3M7NR" time="2.948">
+<testsuite name="tourGuide.TestPerformance" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-03-10T14:23:09" hostname="DESKTOP-1N3M7NR" time="6.574">
   <properties/>
-  <testcase name="highVolumeTrackLocation" classname="tourGuide.TestPerformance" time="1.111"/>
-  <testcase name="highVolumeGetRewards" classname="tourGuide.TestPerformance" time="1.835"/>
-  <system-out><![CDATA[21:03:26.500 [Test worker] INFO tourGuide.service.TourGuideService - TestMode enabled
-21:03:26.501 [Test worker] DEBUG tourGuide.service.TourGuideService - Initializing users
-21:03:26.503 [pool-24-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 100 users.
-21:03:26.518 [Test worker] DEBUG tourGuide.service.TourGuideService - Created 100 internal test users.
-21:03:26.519 [Test worker] DEBUG tourGuide.service.TourGuideService - Finished initializing users
-21:03:26.527 [pool-26-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 100 users.
-21:03:26.557 [pool-26-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-21:03:26.558 [pool-26-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-highVolumeTrackLocation: Time Elapsed: 1 seconds.
-21:03:27.613 [Test worker] INFO tourGuide.service.TourGuideService - TestMode enabled
-21:03:27.613 [Test worker] DEBUG tourGuide.service.TourGuideService - Initializing users
-21:03:27.633 [Test worker] DEBUG tourGuide.service.TourGuideService - Created 100 internal test users.
-21:03:27.633 [Test worker] DEBUG tourGuide.service.TourGuideService - Finished initializing users
-21:03:27.659 [pool-28-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 100 users.
-21:03:27.683 [pool-28-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-21:03:27.683 [pool-28-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-highVolumeGetRewards: Time Elapsed: 1 seconds.
+  <testcase name="highVolumeTrackLocation" classname="tourGuide.TestPerformance" time="3.062"/>
+  <testcase name="highVolumeGetRewards" classname="tourGuide.TestPerformance" time="3.512"/>
+  <system-out><![CDATA[15:23:09.980 [pool-24-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 100 users.
+15:23:09.988 [Test worker] INFO tourGuide.service.TourGuideService - TestMode enabled
+15:23:09.988 [Test worker] DEBUG tourGuide.service.TourGuideService - Initializing users
+15:23:10.010 [Test worker] DEBUG tourGuide.service.TourGuideService - Created 100 internal test users.
+15:23:10.010 [Test worker] DEBUG tourGuide.service.TourGuideService - Finished initializing users
+15:23:10.017 [pool-26-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 100 users.
+15:23:10.090 [pool-26-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+15:23:10.090 [pool-26-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+highVolumeTrackLocation: Time Elapsed: 3 seconds.
+15:23:13.047 [Test worker] INFO tourGuide.service.TourGuideService - TestMode enabled
+15:23:13.047 [Test worker] DEBUG tourGuide.service.TourGuideService - Initializing users
+15:23:13.065 [Test worker] DEBUG tourGuide.service.TourGuideService - Created 100 internal test users.
+15:23:13.065 [Test worker] DEBUG tourGuide.service.TourGuideService - Finished initializing users
+15:23:13.087 [pool-28-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 100 users.
+15:23:13.112 [pool-28-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+15:23:13.114 [pool-28-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+highVolumeGetRewards: Time Elapsed: 3 seconds.
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

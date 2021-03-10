@@ -19,8 +19,8 @@ tourGuide/model/UserReward.java
  tourGuide.model.UserReward
 tourGuide/service/RewardCentralService.java
  tourGuide.service.RewardCentralService
-tourGuide/TourGuideController.java
- tourGuide.TourGuideController
+tourGuide/model/Location.java
+ tourGuide.model.Location
 tourGuide/service/ApiService.java
  tourGuide.service.ApiService
 tourGuide/model/User.java
@@ -41,5 +41,5 @@ tourGuide/tracker/Tracker.java
  tourGuide.tracker.Tracker
 tourGuide/TourGuideModule.java
  tourGuide.TourGuideModule
-tourGuide/model/Location.java
- tourGuide.model.Location
+tourGuide/TourGuideController.java
+ tourGuide.TourGuideController

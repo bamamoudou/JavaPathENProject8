@@ -2,13 +2,13 @@ tourGuide/services/TestTourGuideService.java
  tourGuide.services.TestTourGuideService
 tourGuide/services/TestModel.java
  tourGuide.services.TestModel
-tourGuide/TestTourGuideController.java
- tourGuide.TestTourGuideController
+tourGuide/TestPerformance.java
+ tourGuide.TestPerformance
 tourGuide/services/TestApiService.java
  tourGuide.services.TestApiService
 tourGuide/services/TestHttpRequestService.java
  tourGuide.services.TestHttpRequestService
 tourGuide/services/TestRewardsService.java
  tourGuide.services.TestRewardsService
-tourGuide/TestPerformance.java
- tourGuide.TestPerformance
+tourGuide/TestTourGuideController.java
+ tourGuide.TestTourGuideController

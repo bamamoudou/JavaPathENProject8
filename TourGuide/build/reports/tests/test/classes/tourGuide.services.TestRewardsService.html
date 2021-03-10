@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">15.126s</div>
+<div class="counter">14.577s</div>
 <p>duration</p>
 </div>
 </td>
@@ -66,6 +66,9 @@
 <li>
 <a href="#tab1">Standard output</a>
 </li>
+<li>
+<a href="#tab2">Standard error</a>
+</li>
 </ul>
 <div id="tab0" class="tab">
 <h2>Tests</h2>
@@ -79,17 +82,17 @@
 </thead>
 <tr>
 <td class="success">isWithinAttractionProximity</td>
-<td class="success">0.020s</td>
+<td class="success">0.034s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">nearAllAttractions</td>
-<td class="success">14.334s</td>
+<td class="success">13.566s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">userGetRewards</td>
-<td class="success">0.772s</td>
+<td class="success">0.977s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -97,27 +100,35 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>21:03:10.784 [Test worker] INFO tourGuide.service.TourGuideService - TestMode enabled
-21:03:10.799 [Test worker] DEBUG tourGuide.service.TourGuideService - Initializing users
-21:03:10.810 [Test worker] DEBUG tourGuide.service.TourGuideService - Created 1 internal test users.
-21:03:10.811 [Test worker] DEBUG tourGuide.service.TourGuideService - Finished initializing users
-21:03:10.841 [pool-2-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 1 users.
-21:03:10.908 [pool-2-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-21:03:10.908 [pool-2-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-21:03:24.479 [Test worker] INFO tourGuide.service.TourGuideService - TestMode enabled
-21:03:24.479 [Test worker] DEBUG tourGuide.service.TourGuideService - Initializing users
-21:03:24.481 [Test worker] DEBUG tourGuide.service.TourGuideService - Created 0 internal test users.
-21:03:24.481 [Test worker] DEBUG tourGuide.service.TourGuideService - Finished initializing users
-21:03:24.485 [pool-4-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 0 users.
-21:03:24.486 [pool-4-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-21:03:24.490 [pool-4-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-21:03:25.252 [Test worker] INFO tourGuide.service.TourGuideService - TestMode enabled
-21:03:25.252 [Test worker] DEBUG tourGuide.service.TourGuideService - Initializing users
-21:03:25.252 [Test worker] DEBUG tourGuide.service.TourGuideService - Created 0 internal test users.
-21:03:25.252 [Test worker] DEBUG tourGuide.service.TourGuideService - Finished initializing users
-21:03:25.255 [pool-6-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 0 users.
-21:03:25.256 [pool-6-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-21:03:25.257 [pool-6-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+<pre>15:22:53.550 [Test worker] INFO tourGuide.service.TourGuideService - TestMode enabled
+15:22:53.566 [Test worker] DEBUG tourGuide.service.TourGuideService - Initializing users
+15:22:53.972 [Test worker] DEBUG tourGuide.service.TourGuideService - Created 1 internal test users.
+15:22:53.974 [Test worker] DEBUG tourGuide.service.TourGuideService - Finished initializing users
+15:22:54.016 [pool-2-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 1 users.
+15:22:54.037 [pool-2-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+15:22:54.037 [pool-2-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+15:23:06.618 [Test worker] INFO tourGuide.service.TourGuideService - TestMode enabled
+15:23:06.618 [Test worker] DEBUG tourGuide.service.TourGuideService - Initializing users
+15:23:06.669 [Test worker] DEBUG tourGuide.service.TourGuideService - Created 0 internal test users.
+15:23:06.669 [Test worker] DEBUG tourGuide.service.TourGuideService - Finished initializing users
+15:23:06.669 [pool-4-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 0 users.
+15:23:06.669 [pool-4-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+15:23:06.672 [pool-4-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+15:23:07.597 [Test worker] INFO tourGuide.service.TourGuideService - TestMode enabled
+15:23:07.598 [Test worker] DEBUG tourGuide.service.TourGuideService - Initializing users
+15:23:07.598 [Test worker] DEBUG tourGuide.service.TourGuideService - Created 0 internal test users.
+15:23:07.598 [Test worker] DEBUG tourGuide.service.TourGuideService - Finished initializing users
+15:23:07.599 [pool-6-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 0 users.
+15:23:07.599 [pool-6-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+15:23:07.600 [pool-6-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+</pre>
+</span>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>mars 10, 2021 3:22:53 PM org.javamoney.moneta.DefaultMonetaryContextFactory createMonetaryContextNonNullConfig
+INFOS: Using custom MathContext: precision=256, roundingMode=HALF_EVEN
 </pre>
 </span>
 </div>
@@ -129,7 +140,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 6.6.1</a> at 9 mars 2021 21:03:40</p>
+<a href="http://www.gradle.org">Gradle 6.6.1</a> at 10 mars 2021 15:23:40</p>
 </div>
 </div>
 </body>
